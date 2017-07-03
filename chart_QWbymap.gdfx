@@ -1,0 +1,1810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Width="1300" Height="750" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:ig="clr-namespace:Ico.Gdx;assembly=GdxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:ig12="clr-namespace:Ico.Gdx;assembly=GdxClientCommon" xmlns:igd="clr-namespace:Ico.Gdx.Data;assembly=GdxClientCommon" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands" xmlns:it="clr-namespace:Ico.Twx;assembly=TwxViewControl" xmlns:idd="clr-namespace:Ico.Data.DataConnector;assembly=IcoDataConnector">
+  <Canvas.Background>
+    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+      <LinearGradientBrush.GradientStops>
+        <GradientStop Color="#FF66CFF6" Offset="0" />
+        <GradientStop Color="#FFF2F2F2" Offset="1" />
+      </LinearGradientBrush.GradientStops>
+      <LinearGradientBrush.RelativeTransform>
+        <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+      </LinearGradientBrush.RelativeTransform>
+    </LinearGradientBrush>
+  </Canvas.Background>
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument DisableControlWhenAnyRelatedDynamicIsDisabled="True" FileVersion="10.90.169.00" IsScalable="True" MaximumZoom="1" MinimumZoom="0.75" PreferredStretch="Fill" ScanRate="500" ZoomEnabled="False">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="forwardmonCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function forwardmon_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var beti1:String=ThisWindow.FwxClientWrapper.Read('"<#qwmonthtimelist#>"').Value;
+	beti1=beti1.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	var month:String=beti1.replace(/(.+)(.{2})/,"$2");
+	var year:String = beti1.Substring(0,4);
+	if(month!="01")
+		{month=parseInt(month)-parseInt(1);}
+	else
+	{
+		month="12";
+		year=parseInt(year)-parseInt(1);
+	}
+	if(month.Length==1)
+		month="0"+month;
+	//MessageBox.Show(beti1);
+	var t1:String="#qwbeti1="+year+"-"+month+"-01;";
+	ThisWindow.SetGlobalAliases(t1);
+	t3="#qwmonthtimelist="+year+"-"+month+";";
+	ThisWindow.SetGlobalAliases(t3);
+	var beti2:String;
+	var t2:String;
+	if(month!="12")
+	{
+		month=parseInt(month)+parseInt(1);
+		if(month.Length==1)
+			month="0"+month;
+		beti2=year+"-"+month+"-01";
+		t2="#qwbeti2="+beti2+";";
+	}
+	else
+	{
+		year=parseInt(year)+parseInt(1);
+		beti2=year+"-01-01";
+		t2="#qwbeti2="+beti2+";";
+	}	
+	ThisWindow.SetGlobalAliases(t2);
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="forwardyearCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function forwardyear_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var s:String=ThisWindow.FwxClientWrapper.Read('"<#qwyeartimelist#>"').Value;
+	s=s.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	var year:String=s.Substring(0,4);
+	year=parseInt(year)-parseInt(1);
+	var t1:String="#qwyeartimelist="+year+";";
+	ThisWindow.SetGlobalAliases(t1);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="nianbaoCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function nianbao_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var beti1:String=ThisWindow.FwxClientWrapper.Read('"<#qwtoday#>"').Value;
+	beti1=beti1.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	beti1=beti1.Substring(0,4);
+	var t1:String="#qwyeartimelist="+beti1+";";
+	ThisWindow.SetGlobalAliases(t1);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ribaoCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ribao_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var labeldate : Ico.Gwx.GwxLabel;
+	labeldate = ThisConfiguration.GetObjectByName("Labeldate");
+	var beti1:String=labeldate.Text;
+	var s:String;
+	s=beti1.Substring(0,10);
+	if(s.Substring(6,1)=="月")
+	{
+		s=s.Replace("年","-0");
+		if(s.Substring(9,1)=="日")
+			{s=s.Replace("月","-0");}
+		else
+			{s=s.Replace("月","-");}
+		s=s.Replace("日","");
+	}
+	else
+	{
+		s=s.Replace("年","-");
+		if(s.Substring(9,1)=="日")
+			{s=s.Replace("月","-0");}
+		else
+			{s=s.Replace("月","-");}
+		s=s.Replace("日","");
+	}
+	s=s.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	var t1:String="#qwdaytimelist="+s+";";
+	ThisWindow.SetGlobalAliases(t1);
+	var t2:String="#qwtoday="+s+";";
+	ThisWindow.SetGlobalAliases(t2);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="selectdayCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function selectday_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var wfCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var dateTimePicker : System.Windows.Forms.DateTimePicker;
+	wfCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("DateTimePicker1"));
+	dateTimePicker = System.Windows.Forms.DateTimePicker(wfCtl.Control);
+	// declare and connect to GraphWorX64 label object
+	var s:String=dateTimePicker.Text;
+	if(s.Substring(6,1)=="月")
+	{
+		s=s.Replace("年","-0");
+		if(s.Substring(9,1)=="日")
+			{s=s.Replace("月","-0");}
+		else
+			{s=s.Replace("月","-");}
+		s=s.Replace("日","");
+	}
+	else
+	{
+		s=s.Replace("年","-");
+		if(s.Substring(9,1)=="日")
+			{s=s.Replace("月","-0");}
+		else
+			{s=s.Replace("月","-");}
+		s=s.Replace("日","");
+	}
+	var t:String='#qwdaytimelist='+s+';';
+	ThisWindow.SetGlobalAliases(t);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="selectmonthCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function selectmonth_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var s:String=ThisWindow.FwxClientWrapper.Read('"<#qwmonthtimelist#>"').Value;
+	year=s.Substring(0,4);
+	var obj : System.Windows.Controls.ComboBox;
+	obj = ThisConfiguration.GetObjectByName("combo").ToDependencyObject();
+	var month:String=obj.SelectedValue;
+	var t1:String="#qwbeti1="+year+"-"+month+"-01;";
+	ThisWindow.SetGlobalAliases(t1);
+	var t3:String="#qwmonthtimelist="+year+"-"+month+";";
+	ThisWindow.SetGlobalAliases(t3);
+	var beti2:String;
+	var t2:String;
+	if(month!="12")
+	{
+		month=parseInt(month)+parseInt(1);
+		if(month.Length==1)
+			month="0"+month;
+		beti2=year+"-"+month+"-01";
+		t2="#qwbeti2="+beti2+";";
+	}
+	else
+	{
+		year=parseInt(year)+parseInt(1);
+		beti2=year+"-01-01";
+		t2="#qwbeti2="+beti2+";";
+	}	
+	ThisWindow.SetGlobalAliases(t2);
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="selectyearCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function selectyear_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var obj : System.Windows.Controls.ComboBox;
+	obj = ThisConfiguration.GetObjectByName("combo1").ToDependencyObject();
+	var t1:String="#qwyeartimelist="+obj.SelectedValue+";";
+	ThisWindow.SetGlobalAliases(t1);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="tomorrowCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function tomorrow_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var s:String=ThisWindow.FwxClientWrapper.Read('"<#qwdaytimelist#>"').Value;
+	var now:String=ThisWindow.FwxClientWrapper.Read('"<#qwtoday#>"').Value;
+	s=s.replace(/(^\s*)|(\s*$)/g, ""); 
+	now=now.replace(/(^\s*)|(\s*$)/g, ""); 
+	var day:String=s.replace(/(.+)(.{2})/,"$2");
+	var month:String=s.Substring(5,2);
+	var year:String=s.Substring(0,4);
+	if(s!=now)
+	{
+		if(month=="01"&&day=="31")
+		{
+			month="02";
+			day="01";
+		}
+		else if(month=="02"&&day=="28")
+		{
+			month="03";
+			day="01";
+		}
+		else if(month=="03"&&day=="31")
+		{
+			month="04";
+			day="01";
+		}
+		else if(month=="04"&&day=="30")
+		{
+			month="05";
+			day="01";
+		}
+		else if(month=="05"&&day=="31")
+		{
+			month="06";
+			day="01";
+		}
+		else if(month=="06"&&day=="30")
+		{
+			month="07";
+			day="01";
+		}
+		else if(month=="07"&&day=="31")
+		{
+			month="08";
+			day="01";
+		}
+		else if(month=="08"&&day=="31")
+		{
+			month="09";
+			day="01";
+		}
+		else if(month=="09"&&day=="30")
+		{
+			month="10";
+			day="01";
+		}
+	
+		else if(month=="10"&&day=="31")
+		{
+			month="11";
+			day="01";
+		}
+		else if(month=="11"&&day=="30")
+		{
+			month="12";
+			day="01";
+		}
+		else if(month=="12"&&day=="31")
+		{
+			day="01";
+			month="01";
+			year=parseInt(year)+parseInt(1);
+		}
+		else
+		{
+			day=parseInt(day)+parseInt(1);
+		}
+		var t1:String
+		if(day.Length==1)
+			{t1="#qwdaytimelist="+year+"-"+month+"-0"+day+";";}
+		else
+			{t1="#qwdaytimelist="+year+"-"+month+"-"+day+";";}
+		ThisWindow.SetGlobalAliases(t1);
+	}
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="towardmonthCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function towardmonth_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var beti1:String=ThisWindow.FwxClientWrapper.Read('"<#qwmonthtimelist#>"').Value;
+	beti1=beti1.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	beti1=beti1.Substring(0,7);
+	var month:String=beti1.replace(/(.+)(.{2})/,"$2");
+	var year:String=beti1.Substring(0,4);
+	if(month!="12")
+		{month=parseInt(month)+parseInt(1);}
+	else
+	{
+		month="01";
+		year=parseInt(year)+parseInt(1);
+	}
+	if(month.Length==1)
+		month="0"+month;
+	//MessageBox.Show(beti1);
+	var t1:String="#qwbeti1="+year+"-"+month+"-01;";
+	ThisWindow.SetGlobalAliases(t1);
+	var t3:String="#qwmonthtimelist="+year+"-"+month+";";
+	ThisWindow.SetGlobalAliases(t3);
+	var beti2:String;
+	var t2:String;
+	if(month!="12")
+	{
+		month=parseInt(month)+parseInt(1);
+		if(month.Length==1)
+			month="0"+month;
+		beti2=year+"-"+month+"-01";
+		t2="#qwbeti2="+beti2+";";
+	}
+	else
+	{
+		year=parseInt(year)+parseInt(1);
+		beti2=year+"-01-01";
+		t2="#qwbeti2="+beti2+";";
+	}	
+	ThisWindow.SetGlobalAliases(t2);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="towardyearCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function towardyear_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var s:String=ThisWindow.FwxClientWrapper.Read('"<#qwyeartimelist#>"').Value;
+	s=s.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	var year:String=s.Substring(0,4);
+	year=parseInt(year)+parseInt(1);
+	var t1:String="#qwyeartimelist="+year+";";
+	ThisWindow.SetGlobalAliases(t1);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="TWXdayCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function TWXday_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var s:String=ThisWindow.FwxClientWrapper.Read('"<#qwdaytimelist#>"').Value;
+	var t1:String="#qwdayttimechart="+s+";";
+	var year:String=s.Substring(0,4);
+	var month:String=s.Substring(5,2);
+	var day:String=s.Substring(8,2);
+	var year1:String=year,month1:String=month,day1:String=day;
+	if(month=="01"&&day=="31")
+	{
+		month1="02";
+		day1="01";
+	}
+	else if(month=="02"&&day=="28")
+	{
+		month1="03";
+		day1="01";
+	}
+	else if(month=="03"&&day=="31")
+	{
+		month1="04";
+		day1="01";
+	}
+	else if(month=="04"&&day=="30")
+	{
+		month1="05";
+		day1="01";
+	}
+	else if(month=="05"&&day=="31")
+	{
+		month1="06";
+		day1="01";
+	}
+	else if(month=="06"&&day=="30")
+	{
+		month1="07";
+		day1="01";
+	}
+	else if(month=="07"&&day=="31")
+	{
+		month1="08";
+		day1="01";
+	}
+	else if(month=="08"&&day=="31")
+	{
+		month1="09";
+		day1="01";
+	}
+	else if(month=="09"&&day=="30")
+	{
+		month1="10";
+		day1="01";
+	}
+
+	else if(month=="10"&&day=="31")
+	{
+		month1="11";
+		day1="01";
+	}
+	else if(month=="11"&&day=="30")
+	{
+		month1="12";
+		day1="01";
+	}
+	else if(month=="12"&&day=="31")
+	{
+		day1="01";
+		month1="01";
+		year1=parseInt(year1)+parseInt(1);
+	}
+	else
+	{
+		day1=parseInt(day1)+parseInt(1);
+	}
+	var viewer : Ico.Twx.TwxViewControl;
+	var tab : Ico.Windows.Controls.MultipleTabItem;
+	var chart : Ico.Twx.TwxChartComponent;
+	var localStartTime : System.DateTime;
+	var localEndTime : System.DateTime;
+	var startTime : System.DateTime;
+	var endTime : System.DateTime;
+	// Get reference to the TWX64 Viewer
+	viewer = Ico.Twx.TwxViewControl(ThisConfiguration.GetObjectByName("TWX_day").ToDependencyObject());
+	// Get reference to the 1st (currently the only one) tab
+	tab = Ico.Windows.Controls.MultipleTabItem(viewer.Items[0]);
+	// Get reference to the 1st (currently the only one) chart component
+	chart = Ico.Twx.TwxChartComponent(tab.Items[0]);
+	
+	var startTimeBox:String = year+"-"+month+"-"+day+" 00:00:00"
+	var endTimeBox:String = year1+"-"+month1+"-"+day1+" 00:00:00"
+	//MessageBox.Show(startTimeBox);
+	if (DateTime.TryParse(startTimeBox, startTime)
+		&& DateTime.TryParse(endTimeBox, endTime))
+		{
+			localStartTime = DateTime.Parse(startTimeBox);
+			startTime = localStartTime.ToUniversalTime();
+			localEndTime = DateTime.Parse(endTimeBox);
+			endTime = localEndTime.ToUniversalTime();
+			
+			chart.SetTrendPeriod(endTime, endTime.Subtract(startTime));
+			//MessageBox.Show("Successfully set timerange from " + localStartTime.ToString() + " to " + localEndTime.ToString());
+		}
+	}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="TWXmonthCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function TWXmonth_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var beti1:String=ThisWindow.FwxClientWrapper.Read('"<#qwmonthtimelist#>"').Value;
+	beti1=beti1.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	var month:String=beti1.replace(/(.+)(.{2})/,"$2");
+	var str:String;
+	//MessageBox.Show(beti1);
+	year = beti1.Substring(0,4);
+	var t1:String="#qwmonthtimechart="+year+"-"+month+";";
+	ThisWindow.SetGlobalAliases(t1);
+	var beti2:String;
+	var t2:String;
+	if(month!="12")
+	{
+		month=parseInt(month)+parseInt(1);
+		beti2=year+"-"+month+"-01";
+	}
+	else
+	{
+		year=parseInt(year)+parseInt(1);
+		beti2=year+"-01-01";
+	}	
+	var viewer : Ico.Twx.TwxViewControl;
+	var tab : Ico.Windows.Controls.MultipleTabItem;
+	var chart : Ico.Twx.TwxChartComponent;
+	var localStartTime : System.DateTime;
+	var localEndTime : System.DateTime;
+	var startTime : System.DateTime;
+	var endTime : System.DateTime;
+
+	// Get reference to the TWX64 Viewer
+	viewer = Ico.Twx.TwxViewControl(ThisConfiguration.GetObjectByName("TWX_month").ToDependencyObject());
+	// Get reference to the 1st (currently the only one) tab
+	tab = Ico.Windows.Controls.MultipleTabItem(viewer.Items[0]);
+	// Get reference to the 1st (currently the only one) chart component
+	chart = Ico.Twx.TwxChartComponent(tab.Items[0]);
+	
+	var startTimeBox:String = beti1+"-01 00:00:00"
+	var endTimeBox:String = beti2+" 00:00:00"
+	//MessageBox.Show(startTimeBox);
+	if (DateTime.TryParse(startTimeBox, startTime)
+		&& DateTime.TryParse(endTimeBox, endTime))
+		{
+			localStartTime = DateTime.Parse(startTimeBox);
+			startTime = localStartTime.ToUniversalTime();
+			localEndTime = DateTime.Parse(endTimeBox);
+			endTime = localEndTime.ToUniversalTime();
+			
+			chart.SetTrendPeriod(endTime, endTime.Subtract(startTime));
+			//MessageBox.Show("Successfully set timerange from " + localStartTime.ToString() + " to " + localEndTime.ToString());
+		}
+	
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="yesterdayCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function yesterday_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var s:String=ThisWindow.FwxClientWrapper.Read('"<#qwdaytimelist#>"').Value;
+	var day:String=s.replace(/(.+)(.{2})/,"$2");
+	var month:String=s.Substring(5,2);
+	var year:String=s.Substring(0,4);
+	if(month=="01"&&day=="01")
+	{
+		month="12";
+		year=parseInt(year)-parseInt(1);
+		day="31";
+	}
+	else if(month=="02"&&day=="01")
+	{
+		month="01";
+		day="31";
+	}
+	else if(month=="03"&&day=="01")
+	{
+		month="02";
+		day="28";
+	}
+	else if(month=="04"&&day=="01")
+	{
+		month="03";
+		day="31";
+	}
+	else if(month=="05"&&day=="01")
+	{
+		month="04";
+		day="30";
+	}
+	else if(month=="06"&&day=="01")
+	{
+		month="05";
+		day="31";
+	}
+	else if(month=="07"&&day=="01")
+	{
+		month="06";
+		day="30";
+	}
+	else if(month=="08"&&day=="01")
+	{
+		month="07";
+		day="31";
+	}
+	else if(month=="09"&&day=="01")
+	{
+		month="08";
+		day="31";
+	}	
+	else if(month=="10"&&day=="01")
+	{
+		month="09";
+		day="30";
+	}
+	else if(month=="11"&&day=="01")
+	{
+		month="10";
+		day="31";
+	}
+	else if(month=="12"&&day=="01")
+	{
+		day="30";
+		month="11";
+	}
+	else
+	{
+		day=parseInt(day)-parseInt(1);
+	}
+	if(day.Length==1)
+		{t1="#qwdaytimelist="+year+"-"+month+"-0"+day+";";}
+	else
+		{t1="#qwdaytimelist="+year+"-"+month+"-"+day+";";}
+	ThisWindow.SetGlobalAliases(t1);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="yuebaoCode" Type="JScriptNet">
+              <x:XData><![CDATA[
+function yuebao_CommandExecuting(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var beti1:String=ThisWindow.FwxClientWrapper.Read('"<#qwtoday#>"').Value;
+	beti1=beti1.replace(/(^\s*)|(\s*$)/g, ""); //滤除字符串里的空格
+	beti1=beti1.Substring(0,7);
+	var t1:String="#qwbeti1="+beti1+"-01;";
+	ThisWindow.SetGlobalAliases(t1);
+	var t3:String="#qwmonthtimelist="+beti1+";";
+	ThisWindow.SetGlobalAliases(t3);
+	month=beti1.replace(/(.+)(.{2})/,"$2");
+	var str:String;
+	//MessageBox.Show(beti1);
+	year = beti1.Substring(0,4);
+	var beti2:String;
+	var t2:String;
+	if(str!="12")
+	{
+		month=parseInt(month)+parseInt(1);
+		if(month.Length==1)
+			month="0"+month;
+		beti2=year+"-"+month+"-01";
+		t2="#qwbeti2="+beti2+";";
+	}
+	else
+	{
+		year=parseInt(year)+parseInt(1);
+		beti2=year+"-01-01";
+		t2="#qwbeti2="+beti2+";";
+		ThisWindow.SetGlobalAliases(t2);
+	}	
+	ThisWindow.SetGlobalAliases(t2);
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="GdxClientCommon, Version=10.90.155.0, Culture=neutral, PublicKeyToken=58aa7495915e8ed4" AssemblyCodebase="Files/ICONICS/GENESIS64/Components/GdxClientCommon.DLL" />
+            <ic:AssemblyReference AssemblyName="TwxViewControl" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/TwxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPF" AssemblyCodebase="{x:Null}" />
+            <ic:AssemblyReference AssemblyName="GwxSmartPin" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/GwxSmartPin.DLL" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WidthString="100%" HeightString="100%" RibbonVisible="True" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <gwx:Layer Name="yearLayer" Visibility="Hidden">
+    <Canvas Name="yearlistGroup">
+      <ig:GdxViewControl FileVersion="10.90.169.00" FontFamily="微软雅黑" FontSize="12" Name="GridWorXViewer4" Width="1099.987071" Height="637.897177" Canvas.Left="1.234953" Canvas.Top="97.767497">
+        <ig:GdxViewControl.DataStyleRepository>
+          <ig12:DataStyleSelector Name="New Condition" Key="42572128">
+            <ig12:DataStyle Background="#FFFFCCCC" FilterKey="299474" Name="New Style" StyleKey="" StyleSelectorKey="" />
+          </ig12:DataStyleSelector>
+        </ig:GdxViewControl.DataStyleRepository>
+        <ig:GdxViewControl.FiltersRepository>
+          <igd:GdxFilter Key="299474" Expression="x={{温度(℃)}}==0" Name="New Filter" />
+        </ig:GdxViewControl.FiltersRepository>
+        <ig:GdxViewControl.SubscriptionsRepository>
+          <igd:GdxSubscription Key="29703787" Name="New Subscription">
+            <igd:GdxSubscription.Fields>
+              <igd:GdxDataField IsReadOnly="True" Key="编号" BuiltInType="Int32" />
+              <igd:GdxDataField IsReadOnly="True" Key="站点名称" />
+              <igd:GdxDataField IsReadOnly="True" Key="时间" />
+              <igd:GdxDataField IsReadOnly="True" Key="温度(℃)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="压力(Mpa)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="瞬时流量(t/h)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="用量(t)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="累积流量(t)" BuiltInType="Double" />
+            </igd:GdxSubscription.Fields>
+            <igd:GdxSubscription.Tags>
+              <s:String>db:EC_dataserver.QWmonthdata&lt;@sort=&lt;#qwsort#&gt;, @monti=&lt;#qwyeartimelist#&gt;&gt;</s:String>
+            </igd:GdxSubscription.Tags>
+          </igd:GdxSubscription>
+        </ig:GdxViewControl.SubscriptionsRepository>
+        <ig:GdxViewControl.Items>
+          <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+            <ig:GdxGridView HeaderBorderBrush="#FFB4E5FC" HeaderCellBorderThickness="0,0,1,0" HeaderForeground="#FF000000" HeaderFontSize="26" HeaderMouseOverForeground="#FFFFFFFF" HeaderMouseOverBorderBrush="#00FFFFFF" HeaderSelectedForeground="#FFFFFFFF" HeaderSelectedBorderBrush="#00FFFFFF" GroupHeaderBorderBrush="#FFB4E5FC" GroupHeaderForeground="#FFFFFFFF" RowHeaderBorderBrush="#FFE5EFFF" RowHeaderCellBorderBrush="#FF04A2F7" RowHeaderForeground="#FF04A2F7" MouseOverBackground="#FF86E9F9" RowHeight="50" SelectionBackground="#FF3399FF" ScrollBarBackground="#FFD1ECFF" ScrollBarForeground="#FF04A2F7" ScrollBarMouseOverForeground="#FF0283E2" ScrollBarMousePressedForeground="#FF015EC8" ScrollBarBorderBrush="#FFAAAAAA" ScrollBarMouseOverBorderBrush="#FFAAAAAA" ConditionKey="42572128" SubscriptionID="29703787" BorderBrush="#FFB4E5FC" Background="#FFD1ECFF" FontSize="20" Uid="local:GdxView_1">
+              <ig:GdxGridView.HeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderBackground>
+              <ig:GdxGridView.HeaderMouseOverBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderMouseOverBackground>
+              <ig:GdxGridView.HeaderSelectedBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderSelectedBackground>
+              <ig:GdxGridView.GroupHeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FFC5F3FB" Offset="0" />
+                    <GradientStop Color="#FF04A2F7" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.GroupHeaderBackground>
+              <ig:GdxGridView.RowHeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF6FD1FA" Offset="0" />
+                    <GradientStop Color="#FFD1ECFF" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </ig:GdxGridView.RowHeaderBackground>
+              <ig:GdxGridView.Columns>
+                <ig:GdxColumn Key="编号" Index="7" IsVisible="False" Text="编号" />
+                <ig:GdxColumn Key="站点名称" Text="站点名称" />
+                <ig:GdxColumn Key="时间" Index="1" Text="时间" />
+                <ig:GdxColumn Key="温度(℃)" Index="2" Text="温度(℃)" />
+                <ig:GdxColumn Key="压力(Mpa)" Index="3" Text="压力(Mpa)" />
+                <ig:GdxColumn Key="瞬时流量(t/h)" Index="4" Text="瞬时流量(t/h)" IsAuto="True" />
+                <ig:GdxColumn Key="用量(t)" Index="5" Text="用量(t)" />
+                <ig:GdxColumn Key="累积流量(t)" Index="6" Text="累积流量(t)" IsAuto="True" />
+              </ig:GdxGridView.Columns>
+            </ig:GdxGridView>
+          </iwc:MultipleTabItem>
+        </ig:GdxViewControl.Items>
+      </ig:GdxViewControl>
+      <Button Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button8" Width="87.071945" Height="40.388048" Canvas.Left="1108.207564" Canvas.Top="103.753663">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="310" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick4" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="forwardyear_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="上一年" />
+      </Button>
+      <Button Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button10" Width="87.071945" Height="40.388048" Canvas.Left="1155.010605" Canvas.Top="580.897824">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="310" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthLayer" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="yearLayer" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="返回" />
+      </Button>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="{x:Null}" Foreground="#FF000000" FontFamily="微软雅黑" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label3" Width="406.244744" Height="63.955927" Canvas.Left="325.300399" Canvas.Top="26.344355">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="&quot;&lt;#qwstation_ch#&gt;的年报表&quot;" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock TextTrimming="CharacterEllipsis" />
+      </Label>
+      <Button Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button16" Width="87.071945" Height="40.388048" Canvas.Left="1211.719468" Canvas.Top="103.753663">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="310" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick10" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="towardyear_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="下一年" />
+      </Button>
+      <ComboBox IsDropDownOpen="False" Text="2024" BorderBrush="#FF000000" Background="#FF4F81BD" Foreground="#FFFF5500" FontFamily="Segoe UI" FontSize="28" Name="combo1" Width="87.071945" Height="40.388048" Canvas.Left="1155.010605" Canvas.Top="155.639423">
+        <gwx:GwxEvents.ScriptEventBindings>
+          <script:ScriptEventBindings>
+            <script:ScriptEventBindings.EventBindings>
+              <x:Array Type="script:ScriptEventBinding">
+                <script:ScriptEventBinding EventName="SelectionChanged" MethodName="combo_SelectionChanged" ScriptType="JScriptNet" />
+              </x:Array>
+            </script:ScriptEventBindings.EventBindings>
+          </script:ScriptEventBindings>
+        </gwx:GwxEvents.ScriptEventBindings>
+        <s:String>2016</s:String>
+        <s:String>2017</s:String>
+        <s:String>2018</s:String>
+        <s:String>2019</s:String>
+        <s:String>2020</s:String>
+        <s:String>2021</s:String>
+        <s:String>2022</s:String>
+        <s:String>2023</s:String>
+        <s:String>2024</s:String>
+        <s:String>2025</s:String>
+        <s:String>2026</s:String>
+        <s:String>2027</s:String>
+        <s:String>2028</s:String>
+        <s:String>2029</s:String>
+        <s:String>2030</s:String>
+      </ComboBox>
+      <Button Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button19" Width="87.071945" Height="40.388048" Canvas.Left="1155.010605" Canvas.Top="519.93443">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="310" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick13" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="selectyear_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="确定" />
+      </Button>
+    </Canvas>
+    <Label FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label13" Width="142.276596" Height="34.168085" Canvas.Left="1276.595745" Canvas.Top="81.944681" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="&quot;&lt;#qwyeartimelist#&gt;&quot;" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="2.11076673228346,0,0,2.11076673228346,0,0" />
+    </Label>
+  </gwx:Layer>
+  <gwx:Layer Name="monthLayer" Visibility="Hidden">
+    <Canvas Name="monthlistGroup">
+      <ig:GdxViewControl FileVersion="10.90.169.00" FontFamily="微软雅黑" FontSize="12" Name="GridWorXViewer3" Width="1099.775008" Height="637.897177" Canvas.Left="1.234953" Canvas.Top="97.767497">
+        <ig:GdxViewControl.DataStyleRepository>
+          <ig12:DataStyleSelector Name="New Condition" Key="36099169">
+            <ig12:DataStyle Background="#FFFFCCCC" FilterKey="2809910" Name="New Style" StyleKey="" StyleSelectorKey="" />
+          </ig12:DataStyleSelector>
+        </ig:GdxViewControl.DataStyleRepository>
+        <ig:GdxViewControl.FiltersRepository>
+          <igd:GdxFilter Key="2809910" Expression="x={{温度(℃)}} == 0" Name="New Filter" />
+        </ig:GdxViewControl.FiltersRepository>
+        <ig:GdxViewControl.SubscriptionsRepository>
+          <igd:GdxSubscription Key="53880913" Name="New Subscription">
+            <igd:GdxSubscription.Fields>
+              <igd:GdxDataField IsReadOnly="True" Key="编号" BuiltInType="Int32" />
+              <igd:GdxDataField IsReadOnly="True" Key="站点名称" />
+              <igd:GdxDataField IsReadOnly="True" Key="时间" />
+              <igd:GdxDataField IsReadOnly="True" Key="温度(℃)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="压力(Mpa)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="瞬时流量(t/h)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="用量(t)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="累积流量(t)" BuiltInType="Double" />
+            </igd:GdxSubscription.Fields>
+            <igd:GdxSubscription.Tags>
+              <s:String>db:EC_dataserver.QWdaydata&lt;@sort=&lt;#qwsort#&gt;, @beti1=&lt;#qwbeti1#&gt;, @beti2=&lt;#qwbeti2#&gt;&gt;</s:String>
+            </igd:GdxSubscription.Tags>
+          </igd:GdxSubscription>
+        </ig:GdxViewControl.SubscriptionsRepository>
+        <ig:GdxViewControl.Items>
+          <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+            <ig:GdxGridView HeaderBorderBrush="#FFB4E5FC" HeaderCellBorderThickness="0,0,1,0" HeaderForeground="#FF000000" HeaderFontSize="18" HeaderMouseOverForeground="#FFFFFFFF" HeaderMouseOverBorderBrush="#00FFFFFF" HeaderSelectedForeground="#FFFFFFFF" HeaderSelectedBorderBrush="#00FFFFFF" GroupHeaderBorderBrush="#FFB4E5FC" GroupHeaderForeground="#FFFFFFFF" RowHeaderBorderBrush="#FFE5EFFF" RowHeaderCellBorderBrush="#FF04A2F7" RowHeaderForeground="#FF04A2F7" MouseOverBackground="#FF86E9F9" SelectionBackground="#FF3399FF" ScrollBarBackground="#FFD1ECFF" ScrollBarForeground="#FF04A2F7" ScrollBarMouseOverForeground="#FF0283E2" ScrollBarMousePressedForeground="#FF015EC8" ScrollBarBorderBrush="#FFAAAAAA" ScrollBarMouseOverBorderBrush="#FFAAAAAA" ConditionKey="36099169" SubscriptionID="53880913" BorderBrush="#FFB4E5FC" Background="#FFD1ECFF" FontSize="16" Uid="local:GdxView_1">
+              <ig:GdxGridView.HeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderBackground>
+              <ig:GdxGridView.HeaderMouseOverBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderMouseOverBackground>
+              <ig:GdxGridView.HeaderSelectedBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderSelectedBackground>
+              <ig:GdxGridView.GroupHeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FFC5F3FB" Offset="0" />
+                    <GradientStop Color="#FF04A2F7" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.GroupHeaderBackground>
+              <ig:GdxGridView.RowHeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF6FD1FA" Offset="0" />
+                    <GradientStop Color="#FFD1ECFF" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </ig:GdxGridView.RowHeaderBackground>
+              <ig:GdxGridView.Columns>
+                <ig:GdxColumn Key="编号" Index="5" IsVisible="False" Text="编号" />
+                <ig:GdxColumn Key="站点名称" Text="站点名称" />
+                <ig:GdxColumn Key="时间" Index="1" Text="时间" />
+                <ig:GdxColumn ConditionKey="36099169" Key="温度(℃)" Index="2" Text="温度(℃)" />
+                <ig:GdxColumn Key="压力(Mpa)" Index="3" Text="压力(Mpa)" />
+                <ig:GdxColumn Key="瞬时流量(t/h)" Index="4" Text="瞬时流量(t/h)" />
+                <ig:GdxColumn Key="用量(t)" Index="6" Text="用量(t)" />
+                <ig:GdxColumn Key="累积流量(t)" Index="7" Text="累积流量(t)" />
+              </ig:GdxGridView.Columns>
+            </ig:GdxGridView>
+          </iwc:MultipleTabItem>
+        </ig:GdxViewControl.Items>
+        <gwx:GwxEvents.ScriptEventBindings>
+          <script:ScriptEventBindings>
+            <script:ScriptEventBindings.EventBindings>
+              <x:Array Type="script:ScriptEventBinding">
+                <script:ScriptEventBinding EventName="MouseDoubleClick" MethodName="GridWorXViewer3_MouseDoubleClick" ScriptType="JScriptNet" />
+              </x:Array>
+            </script:ScriptEventBindings.EventBindings>
+          </script:ScriptEventBindings>
+        </gwx:GwxEvents.ScriptEventBindings>
+      </ig:GdxViewControl>
+      <Button BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Name="Button5" Width="87.055159" Height="40.388048" Canvas.Left="1112.720455" Canvas.Top="103.753663">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="312" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick5" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="forwardmon_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="上一月" />
+      </Button>
+      <Button BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Name="Button6" Width="87.055159" Height="40.388048" Canvas.Left="1112.14588" Canvas.Top="562.644234">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="312" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="yearLayer" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthLayer" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick6" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="nianbao_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="年报表" />
+      </Button>
+      <Button BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Name="Button7" Width="87.055159" Height="40.388048" Canvas.Left="1160.709171" Canvas.Top="613.079574">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="312" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="dayLayer" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthLayer" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="返回" />
+      </Button>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="{x:Null}" Foreground="#FF000000" FontFamily="微软雅黑" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label2" Width="406.166425" Height="63.955927" Canvas.Left="325.237924" Canvas.Top="26.344355">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="&quot;&lt;#qwstation_ch#&gt;的月报表&quot;" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock TextTrimming="CharacterEllipsis" />
+      </Label>
+      <Button BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Name="Button12" Width="87.055159" Height="40.388048" Canvas.Left="1211.736274" Canvas.Top="562.644234">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="312" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthchartGroup" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthlistGroup" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick7" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="TWXmonth_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="曲线" />
+      </Button>
+      <Button BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Name="Button15" Width="87.055159" Height="40.388048" Canvas.Left="1211.486103" Canvas.Top="103.753663">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="312" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick9" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="towardmonth_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="下一月" />
+      </Button>
+      <ComboBox IsDropDownOpen="False" Text="08" BorderBrush="#FF000000" Background="#FF4F81BD" Foreground="#FFFF5500" FontFamily="Segoe UI" FontSize="28" Name="combo" Width="87.055159" Height="40.388048" Canvas.Left="1160.709171" Canvas.Top="152.490509">
+        <gwx:GwxEvents.ScriptEventBindings>
+          <script:ScriptEventBindings>
+            <script:ScriptEventBindings.EventBindings>
+              <x:Array Type="script:ScriptEventBinding">
+                <script:ScriptEventBinding EventName="SelectionChanged" MethodName="combo_SelectionChanged" ScriptType="JScriptNet" />
+              </x:Array>
+            </script:ScriptEventBindings.EventBindings>
+          </script:ScriptEventBindings>
+        </gwx:GwxEvents.ScriptEventBindings>
+        <s:String>01</s:String>
+        <s:String>02</s:String>
+        <s:String>03</s:String>
+        <s:String>04</s:String>
+        <s:String>05</s:String>
+        <s:String>06</s:String>
+        <s:String>07</s:String>
+        <s:String>08</s:String>
+        <s:String>09</s:String>
+        <s:String>10</s:String>
+        <s:String>11</s:String>
+        <s:String>12</s:String>
+      </ComboBox>
+      <Button BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Name="Button18" Width="87.055159" Height="40.388048" Canvas.Left="1160.709171" Canvas.Top="516.477831">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="312" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick12" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="selectmonth_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="确定" />
+      </Button>
+      <Label FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label12" Width="145.802184" Height="33.421458" Canvas.Left="949.970773" Canvas.Top="60.392332" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="&quot;&lt;#qwmonthtimelist#&gt;&quot;" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="2.06177545931759,0,0,2.06177545931759,0,0" />
+      </Label>
+    </Canvas>
+    <Canvas Name="monthchartGroup" Visibility="Hidden">
+      <Button Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button13" Width="89.606267" Height="44.499205" Canvas.Left="1209.185196" Canvas.Top="31.748085">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="317" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthlistGroup" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthchartGroup" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="返回" />
+      </Button>
+      <it:TwxViewControl FileVersion="10.90.169.00" ToolBarVisibility="Visible" FontFamily="Microsoft YaHei UI" FontSize="12" Name="TWX_month" Width="1104.971528" Height="709.320293" AllowDrop="True" Canvas.Left="1.234961" Canvas.Top="26.344357">
+        <it:TwxViewControl.Items>
+          <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+            <it:TwxChartComponent UseCustomSummaryTrendAxis="True" LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendFontSize="17" LegendBackground="#FFFFFFFF" ShowLegend="True" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorWidth="3" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" ShowCursorOnRealtime="True" ShowCursorInFreezeMode="True" StartFrozen="True" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodValue="24" SummaryTrendPeriod="217.00:00:00" UncertainQualityPlotMode="Plot" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" AutoTimeAlignment="True" TrendPeriod="31.00:00:00" ShowTrendPeriodToolBar="False" RefreshRateAlignment="Second" SamplingIntervalAlignment="Second" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" RangeMaximumMode="AutoScale" IsGlobalRangeEnabled="True" ManualRangeMaximumTag="200" AutoScaleMargin="6" ShowRangeZoomRuler="False" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+              <it:TwxChartComponent.TrendAxis>
+                <it:TwxAxis MajorTickmarks="3" MinorTickmarks="0" LabelForeground="#FF000000" UseTickmarkTimeAlignment="True" TickmarkTimeAlignment="Day" TickmarkTimeValue="5" LabelDateTimeMode="DateOnly" />
+              </it:TwxChartComponent.TrendAxis>
+              <it:TwxChartComponent.SummaryTrendAxis>
+                <it:TwxAxis MajorTickmarks="3" MinorTickmarks="0" LabelForeground="#FF000000" UseTickmarkTimeAlignment="True" TickmarkTimeAlignment="Custom" TickmarkTimeValue="30" CustomTickmarkTimeAlignment="31.00:00:00" LabelDateTimeMode="DateOnly" />
+              </it:TwxChartComponent.SummaryTrendAxis>
+              <it:TwxChartComponent.Series>
+                <it:TwxSeries PlotID="Spline" Settings="{x:Null}">
+                  <it:TwxSeries.Pens>
+                    <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" IsVisible="True" Stroke="#FF276AAD" Fill="#FF8EBAE6">
+                      <it:TwxChartPen.DataConnectionConfiguration>
+                        <idd:DataConnectorConfiguration PointName="hh:\Configuration\&lt;#qwstation_hh#&gt;:wendu" RawData="version=2;usagetype=2;" />
+                      </it:TwxChartPen.DataConnectionConfiguration>
+                    </it:TwxChartPen>
+                    <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" IsVisible="False" Stroke="#FFB32225" Fill="#FFE98B8D">
+                      <it:TwxChartPen.DataConnectionConfiguration>
+                        <idd:DataConnectorConfiguration PointName="hh:\Configuration\&lt;#qwstation_hh#&gt;:yali" RawData="version=2;usagetype=2;" />
+                      </it:TwxChartPen.DataConnectionConfiguration>
+                    </it:TwxChartPen>
+                    <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" IsVisible="False" Stroke="#FF6AB123" Fill="#FFBAE98B">
+                      <it:TwxChartPen.DataConnectionConfiguration>
+                        <idd:DataConnectorConfiguration PointName="hh:\Configuration\&lt;#qwstation_hh#&gt;:liuliang" RawData="version=2;usagetype=2;" />
+                      </it:TwxChartPen.DataConnectionConfiguration>
+                    </it:TwxChartPen>
+                  </it:TwxSeries.Pens>
+                </it:TwxSeries>
+              </it:TwxChartComponent.Series>
+            </it:TwxChartComponent>
+          </iwc:MultipleTabItem>
+        </it:TwxViewControl.Items>
+      </it:TwxViewControl>
+    </Canvas>
+  </gwx:Layer>
+  <gwx:Layer Name="dayLayer">
+    <Canvas Name="daylistGroup">
+      <Rectangle RadiusX="4.03492082660188" RadiusY="4.17546105193151" Stroke="#FF000000" Width="199.977544" Height="643.654111" Canvas.Left="1098.813904" Canvas.Top="90.163817">
+        <Rectangle.Fill>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFF5F5F5" Offset="0" />
+              <GradientStop Color="#FFCCEFDC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="323" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Rectangle.Fill>
+      </Rectangle>
+      <Button FontFamily="微软雅黑" FontSize="28" Name="Button1" Width="86.596459" Height="40.388047" Canvas.Left="1106.863956" Canvas.Top="103.753661">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFDBEEF3" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="277" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick1" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="yesterday_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="上一天" />
+      </Button>
+      <ig:GdxViewControl FileVersion="10.90.169.00" FontFamily="微软雅黑" FontSize="12" Name="GridWorXViewer2" Width="1093.980209" Height="637.897153" Canvas.Left="1.23496" Canvas.Top="97.767495">
+        <ig:GdxViewControl.DataStyleRepository>
+          <ig12:DataStyleSelector Name="New Condition (1)" Key="64243173">
+            <ig12:DataStyle Background="#FFFFCCCC" FilterKey="30007043" Name="New Style" StyleKey="" StyleSelectorKey="" />
+            <ig12:DataStyle FilterKey="" Name="New Style" StyleKey="" StyleSelectorKey="" />
+          </ig12:DataStyleSelector>
+        </ig:GdxViewControl.DataStyleRepository>
+        <ig:GdxViewControl.FiltersRepository>
+          <igd:GdxFilter Key="30007043" Expression="x={{温度(℃)}} == 0" Name="New Filter" />
+        </ig:GdxViewControl.FiltersRepository>
+        <ig:GdxViewControl.SubscriptionsRepository>
+          <igd:GdxSubscription Key="48416274" Name="New Subscription">
+            <igd:GdxSubscription.Fields>
+              <igd:GdxDataField IsReadOnly="True" Key="编号" BuiltInType="Int32" />
+              <igd:GdxDataField IsReadOnly="True" Key="站点名称" />
+              <igd:GdxDataField IsReadOnly="True" Key="时间" />
+              <igd:GdxDataField IsReadOnly="True" Key="温度(℃)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="压力(Mpa)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="瞬时流量(t/h)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="用量(t)" BuiltInType="Double" />
+              <igd:GdxDataField IsReadOnly="True" Key="累积流量(t)" BuiltInType="Double" />
+            </igd:GdxSubscription.Fields>
+            <igd:GdxSubscription.Tags>
+              <s:String>db:EC_dataserver.QWhourdata&lt;@time=&lt;#qwdaytimelist#&gt;, @sort=&lt;#qwsort#&gt;&gt;</s:String>
+            </igd:GdxSubscription.Tags>
+          </igd:GdxSubscription>
+        </ig:GdxViewControl.SubscriptionsRepository>
+        <ig:GdxViewControl.Items>
+          <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+            <ig:GdxGridView HeaderBorderBrush="#FFB4E5FC" HeaderCellBorderThickness="0,0,1,0" HeaderForeground="#FF000000" HeaderFontSize="24" HeaderMouseOverForeground="#FFFFFFFF" HeaderMouseOverBorderBrush="#00FFFFFF" HeaderSelectedForeground="#FFFFFFFF" HeaderSelectedBorderBrush="#00FFFFFF" GroupHeaderBorderBrush="#FFB4E5FC" GroupHeaderForeground="#FFFFFFFF" RowHeaderBorderBrush="#FFE5EFFF" RowHeaderCellBorderBrush="#FF04A2F7" RowHeaderForeground="#FF04A2F7" MouseOverBackground="#FF86E9F9" RowHeight="23" SelectionBackground="#FF3399FF" ScrollBarBackground="#FFD1ECFF" ScrollBarForeground="#FF04A2F7" ScrollBarMouseOverForeground="#FF0283E2" ScrollBarMousePressedForeground="#FF015EC8" ScrollBarBorderBrush="#FFAAAAAA" ScrollBarMouseOverBorderBrush="#FFAAAAAA" AllowGrouping="False" ConditionKey="64243173" SubscriptionID="48416274" BorderBrush="#FFB4E5FC" Background="#FFD1ECFF" FontSize="18" Uid="local:GdxView_1">
+              <ig:GdxGridView.HeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderBackground>
+              <ig:GdxGridView.HeaderMouseOverBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderMouseOverBackground>
+              <ig:GdxGridView.HeaderSelectedBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF45BFF6" Offset="0" />
+                    <GradientStop Color="#FF38B8F6" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.HeaderSelectedBackground>
+              <ig:GdxGridView.GroupHeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FFC5F3FB" Offset="0" />
+                    <GradientStop Color="#FF04A2F7" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                  <LinearGradientBrush.RelativeTransform>
+                    <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+                  </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+              </ig:GdxGridView.GroupHeaderBackground>
+              <ig:GdxGridView.RowHeaderBackground>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+                  <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#FF6FD1FA" Offset="0" />
+                    <GradientStop Color="#FFD1ECFF" Offset="1" />
+                  </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+              </ig:GdxGridView.RowHeaderBackground>
+              <ig:GdxGridView.Columns>
+                <ig:GdxColumn Key="编号" IsVisible="False" Text="编号" />
+                <ig:GdxColumn Key="站点名称" Index="1" Text="站点名称" />
+                <ig:GdxColumn Key="时间" Index="2" Text="时间" />
+                <ig:GdxColumn Key="温度(℃)" Index="3" Text="温度(℃)" />
+                <ig:GdxColumn Key="压力(Mpa)" Index="4" Text="压力(Mpa)" />
+                <ig:GdxColumn Key="瞬时流量(t/h)" Index="5" Text="瞬时流量(t/h)" IsAuto="True" />
+                <ig:GdxColumn Key="用量(t)" Index="6" Text="用量(t)" />
+                <ig:GdxColumn Key="累积流量(t)" Index="7" Text="累积流量(t)" />
+              </ig:GdxGridView.Columns>
+            </ig:GdxGridView>
+          </iwc:MultipleTabItem>
+        </ig:GdxViewControl.Items>
+        <gwx:GwxEvents.ScriptEventBindings>
+          <script:ScriptEventBindings>
+            <script:ScriptEventBindings.EventBindings>
+              <x:Array Type="script:ScriptEventBinding">
+                <script:ScriptEventBinding EventName="MouseDoubleClick" MethodName="GridWorXViewer2_MouseDoubleClick" ScriptType="JScriptNet" />
+              </x:Array>
+            </script:ScriptEventBindings.EventBindings>
+          </script:ScriptEventBindings>
+        </gwx:GwxEvents.ScriptEventBindings>
+      </ig:GdxViewControl>
+      <Button FontFamily="微软雅黑" FontSize="28" Name="Button3" Width="86.596459" Height="40.388047" Canvas.Left="1106.721591" Canvas.Top="569.553672">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFDBEEF3" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="277" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="monthLayer" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="dayLayer" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick3" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="yuebao_CommandExecuting" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="月报" />
+      </Button>
+      <Label BorderBrush="#FF000000" Background="{x:Null}" Foreground="#FF000000" FontFamily="微软雅黑" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label1" Width="404.026303" Height="63.955926" Canvas.Left="323.530732" Canvas.Top="26.344356">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="&quot;&lt;#qwstation_ch#&gt;的日报表&quot;" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock TextTrimming="CharacterEllipsis" />
+      </Label>
+      <Button FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button9" Width="86.596459" Height="40.388047" Canvas.Left="1205.105219" Canvas.Top="569.553672">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFDBEEF3" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="277" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="daychartGroup" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="daylistGroup" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick14" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="TWXday_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="曲线" />
+      </Button>
+      <Button FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button14" Width="86.596459" Height="40.388047" Canvas.Left="1205.109203" Canvas.Top="103.753661">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFDBEEF3" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="277" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick8" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="tomorrow_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="下一天" />
+      </Button>
+      <gwx:WindowsFormsControl FontFamily="Microsoft YaHei UI" FontSize="12" Name="DateTimePicker1" Width="168.997856" Height="49.925925" Canvas.Left="1118.221688" Canvas.Top="166.013393">
+        <gwx:WindowsFormsControl.ControlProperties>
+          <XmlDataProvider IsAsynchronous="False">
+            <x:XData>
+              <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+                <DateTimePicker xsi:type="System.Windows.Forms.DateTimePicker">
+                  <CalendarFont>Microsoft Sans Serif, 8.25pt</CalendarFont>
+                  <DataBindings>
+                    <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+                  </DataBindings>
+                  <Font>Microsoft Sans Serif, 12pt</Font>
+                  <Location>0, 0</Location>
+                  <Name>DateTimePicker1</Name>
+                  <Size>168, 26</Size>
+                  <TabIndex>1</TabIndex>
+                </DateTimePicker>
+              </Data>
+            </x:XData>
+          </XmlDataProvider>
+        </gwx:WindowsFormsControl.ControlProperties>
+      </gwx:WindowsFormsControl>
+      <Button FontFamily="微软雅黑" FontSize="28" Name="Button17" Width="86.596459" Height="40.388047" Canvas.Left="1150.500476" Canvas.Top="513.938053">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFDBEEF3" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="277" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick11" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="selectday_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="确定" />
+      </Button>
+      <Label FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label8" Width="176.626512" Height="31.792138" Canvas.Left="914.752836" Canvas.Top="58.763013" gwx:GwxProperties.Stretch="Uniform">
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="&quot;&lt;#qwdaytimelist#&gt;&quot;" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="1.95486469816273,0,0,1.95486469816273,0,0" />
+      </Label>
+      <Label FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Canvas.Left="1142.768787" Canvas.Top="687.845423" gwx:GwxProperties.Stretch="Uniform">
+        <TextBlock Text="EC-Control" LayoutTransform="1.9227503347147,0,0,2.05457611548556,0,0" />
+      </Label>
+    </Canvas>
+    <Canvas Name="daychartGroup" Visibility="Hidden">
+      <Button Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="28" Name="Button11" Width="96.628631" Height="43.608663" Canvas.Left="1202.162818" Canvas.Top="42.976552">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FF66CFF6" Offset="0" />
+              <GradientStop Color="#FFCCEFFC" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="301" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="daylistGroup" VisibilityCommand="Show" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ObjectVisibilityCommand ObjectName="daychartGroup" VisibilityCommand="Hide" />
+                </gwx:GwxPick.CommandParameters>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="返回" />
+      </Button>
+      <it:TwxViewControl FileVersion="10.90.169.00" ToolBarVisibility="Visible" FontFamily="Microsoft YaHei UI" FontSize="12" Name="TWX_day" Width="1194.120524" Height="709.3203" AllowDrop="True" Canvas.Left="1.234954" Canvas.Top="26.344356">
+        <it:TwxViewControl.Items>
+          <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+            <it:TwxChartComponent UseCustomSummaryTrendAxis="True" LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendFontSize="17" LegendBackground="#FFFFFFFF" ShowLegend="True" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorWidth="3" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" ShowCursorOnRealtime="True" ShowCursorInFreezeMode="True" StartFrozen="True" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodValue="24" SummaryTrendPeriod="8.00:00:00" UncertainQualityPlotMode="Plot" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" AutoTimeAlignment="True" TrendPeriod="1.00:00:00" ShowTrendPeriodToolBar="False" RefreshRateAlignment="Second" SamplingIntervalAlignment="Second" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" RangeMaximumMode="AutoScale" IsGlobalRangeEnabled="True" ManualRangeMaximumTag="200" AutoScaleMargin="6" ShowRangeZoomRuler="False" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+              <it:TwxChartComponent.TrendAxis>
+                <it:TwxAxis MajorTickmarks="3" MinorTickmarks="0" LabelForeground="#FF000000" UseTickmarkTimeAlignment="True" TickmarkTimeAlignment="Hour" TickmarkTimeValue="4" />
+              </it:TwxChartComponent.TrendAxis>
+              <it:TwxChartComponent.SummaryTrendAxis>
+                <it:TwxAxis MajorTickmarks="3" MinorTickmarks="0" LabelForeground="#FF000000" UseTickmarkTimeAlignment="True" TickmarkTimeAlignment="Custom" TickmarkTimeValue="30" CustomTickmarkTimeAlignment="1.00:00:00" LabelDateTimeMode="DateOnly" />
+              </it:TwxChartComponent.SummaryTrendAxis>
+              <it:TwxChartComponent.Series>
+                <it:TwxSeries PlotID="Spline" Settings="{x:Null}">
+                  <it:TwxSeries.Pens>
+                    <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" IsVisible="True" Stroke="#FF276AAD" Fill="#FF8EBAE6">
+                      <it:TwxChartPen.DataConnectionConfiguration>
+                        <idd:DataConnectorConfiguration PointName="hh:\Configuration\&lt;#qwstation_hh#&gt;:wendu" RawData="version=2;usagetype=2;" />
+                      </it:TwxChartPen.DataConnectionConfiguration>
+                    </it:TwxChartPen>
+                    <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" IsVisible="True" Stroke="#FFB32225" Fill="#FFE98B8D">
+                      <it:TwxChartPen.DataConnectionConfiguration>
+                        <idd:DataConnectorConfiguration PointName="hh:\Configuration\&lt;#qwstation_hh#&gt;:yali" RawData="version=2;usagetype=2;" />
+                      </it:TwxChartPen.DataConnectionConfiguration>
+                    </it:TwxChartPen>
+                    <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" IsVisible="True" Stroke="#FF6AB123" Fill="#FFBAE98B">
+                      <it:TwxChartPen.DataConnectionConfiguration>
+                        <idd:DataConnectorConfiguration PointName="hh:\Configuration\&lt;#qwstation_hh#&gt;:liuliang" RawData="version=2;usagetype=2;" />
+                      </it:TwxChartPen.DataConnectionConfiguration>
+                    </it:TwxChartPen>
+                  </it:TwxSeries.Pens>
+                </it:TwxSeries>
+              </it:TwxChartComponent.Series>
+            </it:TwxChartComponent>
+          </iwc:MultipleTabItem>
+        </it:TwxViewControl.Items>
+      </it:TwxViewControl>
+    </Canvas>
+  </gwx:Layer>
+</Canvas>

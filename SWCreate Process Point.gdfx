@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFFFFFFF" Width="1440" Height="860" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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7dq11r59e7vqqqtCiayw071c7969tWtmdRzdC1955ZVhR9SD8bzzzgthE5fbtmzZMjvllFOqJQBQM1X7k4CqAFS6xTtBKNf0pM1LL70USjjRPdX999+v96vsQatFc80119i8efNCiRqXV6b7IVU8+vvFCybrAKgujzzySKTKTWGma6gSXOGi8k5vEwD4Jy5/C/DYY49FWvi6DVHJqsWisrUmBgCQDX4NCDjGKwEBxwgAwDECAHCMAAAcIwAAxwgAwDECAHCMAAAcIwAAx3glIPAfVVxcHGkIyJlnnhkavE444QQ1mYXBIAcddFCYDNSiRYusXrJOAKBGeu2116Kffvop9Omri3TQoEGhPVedlpoMpE5L9dNnPj1rEyZMCB2karDSQJDbb789HFdt12r3/vHHH/WxRPtH1LSmdmotUY0E04yFwYMHp04++eSof//+duSRR9rAgQOzOiYTgZAItT/vPjVn6tSpYR6AhmaozTxesOHzkhqA8uabb9rFF18cmri0SDQ666KLLgrt5eo01VyEJNvZ1S6uNnady9FHHx1ayDXPQW3YaixTa3vHjh0TDQANj/n666/DfA5NAFKwacZDHADh76BqIC8vL6tjpu66666Kk046yX755Rdbvnx5mHTSvXv30MOuH+S1116b6El5Mm7cuDCsQx2H2jXUgqwORJVwaokuKirScIlacX03b94cPf/882E3bNOmTShZ1aasRTpz5kxbsGCBZkHo/ydyvqoANBhTi13/aQG+8sordthhh4VpQO+884499NBDiV1bDV7RQtfUI81Z0JopKysL8ys07ERva3fOfHqNkYoTpUJljE7gtNNOC2PB7r33XnvmmWfskksusVatWiV6UnEZE3aKv6edakyW3tZQC6Wr3o//f61YFCrhVKpp3Jp2JiX2zTffrHbkMAdB1zvbAIh32UiLa8OGDSHENRBEQa6SVLPjNEMuyYWwN38PQNHUnOHDh4fJR9pANKNAi0Y7dKdOnRIdC4bspXNzc4u06A499NAwSEJhoHItnU6HZE16h1JZqNltehJDDwjds+n4Ktl0H6eSLtt5Z/8mPlb09NNPh51J4TNlypSwe2hRarFOnDjRzj///Kz/Dh9++GE4Xy10Da7UyC5NBNIUIt3XabeMr3FWx1Fwd+3aNVxHzaXTrnj66aeH0WoKgI0bN+pJpCpfdJrgpKGfKrtzcnLCzLr8/Pwwyy4+31Tnzp1TtWX+YW1S7U8CqgLQTqFZeXoSRSGg3UpTTzWOq6pmEe4uvreKVCaqLNfxdX/3+eefhydVFEIvvPCC3XbbbTXiwaoKQINcFdaqqL777rtQbmukm8I03nHDrUeSAytRe7j8LYAqAN3iaKS07sl1D6fyWVWPFo2mIWvRxBURiwa1Gr8GBBzjlYCAYwQA4BgBADhGAACOEQCAYwQA4BgBADhGAACOhRcCbd++PSouLg6viz/22GNDF5deF6/+av0zz3p1XFFREa+K20+7du2qvL5qjNH1VL/69OnTwz9MqkYevRqxqnsggD2FCuCzzz4LDSXt2rWz6667znJyckIDi1os+/Xrl1LzTlWYO3duFC8CLY6oT58+0apVq6L58+dHw4YNi4YMGRKVlpbWilcpqtdB/+ComnP02ny1kKrzUQMtLrjggvAyZPUmANUtBIAWu/6JbrVvptPpsAsNHTo0TCBRm6ferwrqYNMQh0aNGtmll14aernVpadea7UHK4iqWklJSfTkk09G6t3v27dvtGTJkmjatGnRmDFjopkzZ0ajRo3K+vy14NUVqK5HdQRKq1atLDc312699dbQGaj5C0B1O6C9AKoA1IyjAFB7cFwCh152dQlqZywvL7eCgoIqLYvVsz9gwIDQAq3j3XTTTTZ+/HjLz8+3pUuXhq7F7t27U5qjVnLfDPToo49G6p1XW7B2ac1E+Ls1WFN7CgsL7fLLLycAUCvRDQg4xq8BAccIAMAxAgBwjAAAHCMAALfM/gdDcXxasTDk5gAAAABJRU5ErkJggg==" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.90.169.00" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick1Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick1_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var label : GwxLabel = GwxLabel.Create(ThisConfiguration, new Rect(10,10,Double.NaN,Double.NaN), ThisConfiguration.CurrentParent, false, null);
+	var ppttype : Type = GwxProcessPoint;
+	var ppt : GwxProcessPoint = GwxProcessPoint(label.AddDynamic(ppttype));
+	ppt.DataSource = "localsim:ramp";
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick2Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick2_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var label : GwxLabel = GwxLabel.Create(ThisConfiguration, new Rect(100,100,Double.NaN,Double.NaN), ThisConfiguration.CurrentParent, false, null);
+	var ppt : GwxProcessPoint = new GwxProcessPoint();
+	ppt.DataSource = "localsim:ramp";
+	label.AddDynamic(ppt);
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick3Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick3_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var num:String="25";
+	var name:String="BFHDLZEHZ";
+	var name1:String="HDLZEHZ";
+	var labname:String;
+	var labtext:String;
+	for(i=1;i<21;i++)
+	{
+		if(i>2&&i<15)
+			continue;
+		labname="Label";
+		labname=labname+i;
+		var lab:Ico.Gwx.GwxLabel=ThisConfiguration.GetObjectByName(labname);
+		labtext=lab.Text;
+		var label : GwxLabel = GwxLabel.Create(ThisConfiguration, new Rect(100+i*50,300,Double.NaN,Double.NaN), ThisConfiguration.CurrentParent, false, null);
+		var ppt : GwxProcessPoint = new GwxProcessPoint();
+		ppt.DataSource = "x=IF quality({{@Kepware.KEPServerEX.V5\\"+name+"."+name1+"."+labtext+".Value}})>100\nTHEN {{@Kepware.KEPServerEX.V5\\"+name+"."+name1+"."+labtext+".Value}}\nELSE IF {{db:EC_dataserver.realtime[A"+labtext+"]["+num+"]}}<-10\nTHEN \"--\"\nELSE {{db:EC_dataserver.realtime[A"+labtext+"]["+num+"]}}\n";
+		label.AddDynamic(ppt);
+	}
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Button FontFamily="Segoe UI" FontSize="12" Name="Button1" Width="41.6233333333333" Height="21.96" Canvas.Left="10" Canvas.Top="40" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick1" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick1_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" />
+  </Button>
+  <Button FontFamily="Segoe UI" FontSize="12" Name="Button2" Width="41.6233333333333" Height="21.96" Canvas.Left="100" Canvas.Top="40" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick2" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick2_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" />
+  </Button>
+  <Button FontFamily="Microsoft YaHei UI" FontSize="12" Name="Button3" Width="140" Height="40" Canvas.Left="179" Canvas.Top="28" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick3" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick3_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" LayoutTransform="2.36220472440945,0,0,2.36220472440945,0,0" />
+  </Button>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label1" Width="99.486707" Height="67.830266" Canvas.Left="-33.599182" Canvas.Top="587.402862" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0107" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label2" Width="99.486707" Height="67.830266" Canvas.Left="133.476482" Canvas.Top="594.437629" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0108" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label3" Width="99.486707" Height="67.830266" Canvas.Left="318.139058" Canvas.Top="598.034014" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0211" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label4" Width="99.486707" Height="67.830266" Canvas.Left="462.351738" Canvas.Top="589.161554" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0212" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label5" Width="99.486707" Height="67.830266" Canvas.Left="604.805725" Canvas.Top="592.678937" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0221" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label6" Width="99.486707" Height="67.830266" Canvas.Left="798.261758" Canvas.Top="582.12679" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0222" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label7" Width="99.486707" Height="67.830266" Canvas.Left="953.026584" Canvas.Top="578.609407" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0231" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label8" Width="99.486707" Height="67.830266" Canvas.Left="1109.550101" Canvas.Top="580.368099" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0232" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label9" Width="99.486707" Height="67.830266" Canvas.Left="1271.349693" Canvas.Top="571.574642" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0241" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label10" Width="99.486707" Height="67.830266" Canvas.Left="1405.010224" Canvas.Top="580.368099" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0242" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label11" Width="99.486707" Height="67.830266" Canvas.Left="1566.809816" Canvas.Top="571.574642" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0251" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label12" Width="99.486707" Height="67.830266" Canvas.Left="-31.840491" Canvas.Top="687.648261" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0252" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label13" Width="99.486707" Height="67.830266" Canvas.Left="135.235173" Canvas.Top="694.683028" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0261" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label14" Width="99.486707" Height="67.830266" Canvas.Left="319.897749" Canvas.Top="699.959101" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0262" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label15" Width="99.486707" Height="67.830266" Canvas.Left="464.110429" Canvas.Top="689.406953" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0101" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label16" Width="99.486707" Height="67.830266" Canvas.Left="606.564416" Canvas.Top="692.924336" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0102" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label17" Width="99.486707" Height="67.830266" Canvas.Left="800.020449" Canvas.Top="682.372189" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0103" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label18" Width="99.486707" Height="67.830266" Canvas.Left="954.785275" Canvas.Top="678.854806" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0105" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label19" Width="99.486707" Height="67.830266" Canvas.Left="1111.308792" Canvas.Top="680.613498" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0104" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label20" Width="99.486707" Height="67.830266" Canvas.Left="1273.108384" Canvas.Top="671.820041" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0106" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label21" Width="99.486707" Height="67.830266" Canvas.Left="-16.802307" Canvas.Top="768.809112" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0121" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label22" Width="99.486707" Height="67.830266" Canvas.Left="150.273357" Canvas.Top="775.843879" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0131" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label23" Width="99.486707" Height="67.830266" Canvas.Left="334.935933" Canvas.Top="779.440264" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0122" TextTrimming="CharacterEllipsis" />
+  </Label>
+  <Label FontFamily="Microsoft YaHei UI" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label24" Width="99.486707" Height="67.830266" Canvas.Left="479.148613" Canvas.Top="770.567804" gwx:GwxProperties.RuntimeStretch="Uniform">
+    <TextBlock Text="0132" TextTrimming="CharacterEllipsis" />
+  </Label>
+</Canvas>

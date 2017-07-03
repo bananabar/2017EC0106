@@ -1,0 +1,1901 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Width="1920" Height="917" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Background>
+    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+      <LinearGradientBrush.GradientStops>
+        <GradientStop Color="#FF66CFF6" Offset="0" />
+        <GradientStop Color="#FFF2F2F2" Offset="1" />
+      </LinearGradientBrush.GradientStops>
+      <LinearGradientBrush.RelativeTransform>
+        <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+      </LinearGradientBrush.RelativeTransform>
+    </LinearGradientBrush>
+  </Canvas.Background>
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument DisableControlWhenAnyRelatedDynamicIsDisabled="True" FileVersion="10.90.169.00" IsScalable="True" MaximumZoom="1" MinimumZoom="1" PreferredStretch="Fill" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick1Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick1_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var label:Ico.Gwx.GwxLabel=ThisConfiguration.GetObjectByName("Label1");
+	var tt:String=label.Text;
+	var aa=tt.Split("/");
+	aa[0]=aa[0].ToString().Replace("℃","");
+	aa[1]=aa[1].ToString().Replace("℃","");
+	var a=(parseInt(aa[1])+parseInt(aa[0]))/2;
+	MessageBox.Show(a);
+	var t:String="#wendu="+a+";";
+	ThisWindow.SetGlobalAliases(t);
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="GdxViewControl" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/GdxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/IcoWPFSpecialized.DLL" />
+            <ic:AssemblyReference AssemblyName="GdxClientCommon, Version=10.90.155.0, Culture=neutral, PublicKeyToken=58aa7495915e8ed4" AssemblyCodebase="Files/ICONICS/GENESIS64/Components/GdxClientCommon.DLL" />
+            <ic:AssemblyReference AssemblyName="TwxViewControl" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/TwxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPF" AssemblyCodebase="{x:Null}" />
+            <ic:AssemblyReference AssemblyName="GwxSmartPin" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/GwxSmartPin.DLL" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+      <gwx:GwxDocument.EventBindings>
+        <script:ScriptEventBindings>
+          <script:ScriptEventBindings.EventBindings>
+            <x:Array Type="script:ScriptEventBinding">
+              <script:ScriptEventBinding EventName="AnimationStarted" MethodName="ThisDisplay_AnimationStarted" ScriptType="JScriptNet" />
+            </x:Array>
+          </script:ScriptEventBindings.EventBindings>
+        </script:ScriptEventBindings>
+      </gwx:GwxDocument.EventBindings>
+      <gwx:GwxDocument.RuntimeWindowProperties>
+        <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WidthString="100%" HeightString="100%" RibbonVisible="True" />
+      </gwx:GwxDocument.RuntimeWindowProperties>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <gwx:Layer Name="realLayer">
+    <Label Background="{x:Null}" Foreground="#FF604B79" FontFamily="Microsoft YaHei UI" FontSize="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label4" Width="413.957773" Height="56.600224" Canvas.Left="732.94138" Canvas.Top="3.793471">
+      <TextBlock Text="明日能耗预测" TextTrimming="CharacterEllipsis" />
+    </Label>
+    <Label FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Name="Labeldate" Width="269.148937" Height="33.667298" Canvas.Left="1390.361364" Canvas.Top="66.008056" gwx:GwxProperties.Stretch="Uniform">
+      <gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <gwx:GwxDynamicGroup>
+          <gwx:GwxDynamicGroup.DynamicsList>
+            <gwx:GwxTimeDate TimeFormat="Custom" DateFormat="Custom" CustomTimeFormat="HH:mm:ss" CustomDateFormat="yyyy'年'M'月'd'日'" />
+          </gwx:GwxDynamicGroup.DynamicsList>
+        </gwx:GwxDynamicGroup>
+      </gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <TextBlock Text="2016年9月28日 11:15:39" TextTrimming="CharacterEllipsis" LayoutTransform="1.55297230971129,0,0,1.55297230971129,0,0" />
+    </Label>
+    <Canvas>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="#FF7F7F7F" Foreground="#FF00FF2A" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label6" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="102.397866">
+        <TextBlock Text="站点名称" TextTrimming="CharacterEllipsis" />
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="#FF7F7F7F" Foreground="#FF00FF2A" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label7" Width="525.191" Height="35" Canvas.Left="1198.885685" Canvas.Top="102.397866">
+        <TextBlock Text="热量（百万千焦）" TextTrimming="CharacterEllipsis" />
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="#FF7F7F7F" Foreground="#FF00FF2A" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label9" Width="424.836033" Height="35" Canvas.Left="774.049654" Canvas.Top="102.397866">
+        <TextBlock Text="总流量（吨）" TextTrimming="CharacterEllipsis" />
+      </Label>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button23" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="137.397866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][0]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick16" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label16" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="137.397866" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][0]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][0]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button35" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="172.397866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][1]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick17" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button24" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="207.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][2]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick18" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button25" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="242.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][3]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick19" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button26" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="277.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][4]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick20" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button27" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="312.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][5]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick21" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button28" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="347.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][6]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick22" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button29" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="382.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][7]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick23" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button30" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="417.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][8]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick44" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button31" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="452.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][9]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick25" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button32" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="487.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][10]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick26" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button33" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="522.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][11]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick27" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button34" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="557.317866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="{}{{x=trim({{db:EC_dataserver.QWrealtime[站点名称][13]}},&quot; &quot;)}}" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick29" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button36" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="592.397866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][14]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick30" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button37" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="627.397866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][15]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick31" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button38" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="662.397866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][16]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick32" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button39" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="697.397866">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][17]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick33" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button40" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="732.26488">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][18]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick34" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button41" Width="610.492722" Height="35" Canvas.Left="163.556926" Canvas.Top="766.984861">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][19]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick35" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button42" Width="610.492722" Height="35" Canvas.Left="163.556926" Canvas.Top="801.397842">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][20]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick36" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Button Foreground="#FF002060" FontFamily="Microsoft YaHei UI" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="Button43" Width="610.492722" Height="35" Canvas.Left="163.556928" Canvas.Top="836.052556">
+        <Button.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Button.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" ShowToolTip="False" DataSource="x=trim({{db:EC_dataserver.QWrealtime[站点名称][21]}},&quot; &quot;)" />
+              <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick37" Control="True">
+                <gwx:GwxPick.CommandParameters>
+                  <gwxcmd:ScriptCommand />
+                </gwx:GwxPick.CommandParameters>
+                <gwx:GwxPick.EventBindings>
+                  <script:ScriptEventBindings>
+                    <script:ScriptEventBindings.EventBindings>
+                      <x:Array Type="script:ScriptEventBinding">
+                        <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick19_CommandExecuted" ScriptType="JScriptNet" />
+                      </x:Array>
+                    </script:ScriptEventBindings.EventBindings>
+                  </script:ScriptEventBindings>
+                </gwx:GwxPick.EventBindings>
+              </gwx:GwxPick>
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" />
+      </Button>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label19" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="172.3306" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][1]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][1]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label20" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="207.263335" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][2]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][2]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label22" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="242.19607" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][3]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][3]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label26" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="277.128804" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][4]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][4]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label27" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="312.061538" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][5]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][5]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label28" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="346.994273" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][6]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][6]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label31" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="381.927007" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][7]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][7]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label32" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="416.859742" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][8]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][8]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label35" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="451.792476" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][9]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][9]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label36" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="486.725211" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][10]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][10]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label39" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="521.657945" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][11]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][11]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label40" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="556.59068" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][13]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][13]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label43" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="591.523414" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][14]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][14]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label44" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="626.456149" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][15]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][15]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label47" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="661.388884" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][16]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][16]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label48" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="696.321618" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][17]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][17]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label51" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="731.254353" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][18]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][18]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label52" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="766.187087" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][19]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][19]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label55" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="801.119822" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][20]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][20]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label56" Width="424.836033" Height="35" IsHitTestVisible="False" Canvas.Left="774.049654" Canvas.Top="836.052556" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][21]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][21]}}" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label17" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="137.397866" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][0]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][0]}} * 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label21" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="172.3306" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][1]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][1]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label24" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="207.263335" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][2]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][2]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label29" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="242.19607" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][3]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][3]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label33" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="277.128804" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][4]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][4]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label37" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="312.061538" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][5]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][5]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label41" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="346.994273" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][6]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][6]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label45" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="381.927007" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][7]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][7]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label49" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="416.859742" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][8]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][8]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label53" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="451.792476" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][9]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][9]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label57" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="486.725211" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][10]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][10]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label59" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="521.657945" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][11]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][11]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label60" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="556.59068" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][13]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][13]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label61" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="591.523414" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][14]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][14]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label63" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="626.456149" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][15]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][15]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label64" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="661.388884" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][16]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][16]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label65" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="696.321618" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][17]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][17]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label67" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="731.254353" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][18]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][18]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label68" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="766.187087" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][19]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][19]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label69" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="801.119822" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][20]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][20]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+      <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Foreground="#FF7B4B23" FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label71" Width="525.191" Height="35" IsHitTestVisible="False" Canvas.Left="1198.885685" Canvas.Top="836.052556" gwx:GwxProperties.RuntimeStretch="Uniform">
+        <Label.Background>
+          <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" Opacity="1">
+            <LinearGradientBrush.GradientStops>
+              <GradientStop Color="#FFCCEFFC" Offset="0" />
+              <GradientStop Color="#FFFFFFFF" Offset="1" />
+            </LinearGradientBrush.GradientStops>
+            <LinearGradientBrush.RelativeTransform>
+              <RotateTransform Angle="315" CenterX="0.5" CenterY="0.5" />
+            </LinearGradientBrush.RelativeTransform>
+          </LinearGradientBrush>
+        </Label.Background>
+        <gwx:GwxDynamicGroup.GwxDynamicGroup>
+          <gwx:GwxDynamicGroup>
+            <gwx:GwxDynamicGroup.DynamicsList>
+              <gwx:GwxProcessPoint AnimationMode="Analog" DataSource="x=IF {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][21]}}&lt;-10&#xA;THEN &quot;--&quot;&#xA;ELSE {{db:EC_dataserver.QWavgshunliu[瞬时流量(t/h)][21]}}* 3.05" />
+            </gwx:GwxDynamicGroup.DynamicsList>
+          </gwx:GwxDynamicGroup>
+        </gwx:GwxDynamicGroup.GwxDynamicGroup>
+        <TextBlock Text="*.??" TextTrimming="CharacterEllipsis">
+          <TextBlock.LayoutTransform>
+            <ScaleTransform ScaleX="2.0341207349081363" ScaleY="2.0341207349081363" />
+          </TextBlock.LayoutTransform>
+        </TextBlock>
+      </Label>
+    </Canvas>
+  </gwx:Layer>
+</Canvas>

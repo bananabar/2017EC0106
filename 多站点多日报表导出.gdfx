@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFFFFFFF" Width="1920" Height="1080" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.90.169.00" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="listbox2Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function listbox2_DoubleClick(sender : System.Object, e : System.EventArgs)
+{
+	var wfCt2 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox2 : System.Windows.Forms.ListBox;
+	wfCt2 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox2"));
+	listbox2 = System.Windows.Forms.ListBox(wfCt2.Control);
+
+	var wfCt3 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox3 : System.Windows.Forms.ListBox;
+	wfCt3 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox3"));
+	listbox3 = System.Windows.Forms.ListBox(wfCt3.Control);
+	
+	var selectitemIndex=listbox2.SelectedIndex
+	if(selectitemIndex<0)
+	{
+		return
+	}
+	var selectitem=listbox2.Items(selectitemIndex)
+	var insertindex=listbox3.Items.Count;
+
+	for(var i=0; i<listbox3.Items.Count; i++)
+	{
+		if(getstationid(listbox3.Items[i].ToString())>getstationid(selectitem))
+		{	
+			insertindex=i;
+			break;
+		}
+	}
+	listbox3.Items.Insert(insertindex,selectitem)
+	listbox2.Items.RemoveAt(selectitemIndex)
+}
+
+function getstationid(station : String)
+{
+	var wfCt4 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox4 : System.Windows.Forms.ListBox;
+	wfCt4 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox4"));
+	listbox4 = System.Windows.Forms.ListBox(wfCt4.Control);
+	for(var i=0;i<listbox4.Items.Count;i++)
+	{
+		if(listbox4.Items[i]==station)
+			return i;
+	}
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="listbox3Code" Type="JScriptNet">
+              <x:XData><![CDATA[function listbox3_DoubleClick(sender : System.Object, e : System.EventArgs)
+{
+	var wfCt2 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox2 : System.Windows.Forms.ListBox;
+	wfCt2 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox3"));
+	listbox2 = System.Windows.Forms.ListBox(wfCt2.Control);
+
+	var wfCt3 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox3 : System.Windows.Forms.ListBox;
+	wfCt3 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox2"));
+	listbox3 = System.Windows.Forms.ListBox(wfCt3.Control);
+	
+	var selectitemIndex=listbox2.SelectedIndex
+	if(selectitemIndex<0)
+	{
+		return
+	}
+	var selectitem=listbox2.Items(selectitemIndex)
+	var insertindex=listbox3.Items.Count;
+
+	for(var i=0; i<listbox3.Items.Count; i++)
+	{
+		if(getstationid(listbox3.Items[i].ToString())>getstationid(selectitem))
+		{	
+			insertindex=i;
+			break;
+		}
+	}
+	listbox3.Items.Insert(insertindex,selectitem)
+	listbox2.Items.RemoveAt(selectitemIndex)}
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick1Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick1_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var wfCtl : Ico.Gwx.GwxWindowsFormsControl;
+	var dateTimePicker : System.Windows.Forms.DateTimePicker;
+	wfCtl = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("DateTimePicker1"));
+	dateTimePicker = System.Windows.Forms.DateTimePicker(wfCtl.Control);
+	// declare and connect to GraphWorX64 label object
+	var s:String=dateTimePicker.Text;
+	if(s.Substring(6,1)=="月")
+	{
+		s=s.Replace("年","-0");
+		if(s.Substring(9,1)=="日")
+			{s=s.Replace("月","-0");}
+		else
+			{s=s.Replace("月","-");}
+		s=s.Replace("日","");
+	}
+	else
+	{
+		s=s.Replace("年","-");
+		if(s.Substring(9,1)=="日")
+			{s=s.Replace("月","-0");}
+		else
+			{s=s.Replace("月","-");}
+		s=s.Replace("日","");
+	}
+	var wfCt2 : Ico.Gwx.GwxWindowsFormsControl;
+	var dateTimePicker2 : System.Windows.Forms.DateTimePicker;
+	wfCt2 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("DateTimePicker2"));
+	dateTimePicker2 = System.Windows.Forms.DateTimePicker(wfCt2.Control);
+	// declare and connect to GraphWorX64 label object
+	var s2:String=dateTimePicker2.Text;
+	if(s2.Substring(6,1)=="月")
+	{
+		s2=s2.Replace("年","-0");
+		if(s2.Substring(9,1)=="日")
+			{s2=s2.Replace("月","-0");}
+		else
+			{s2=s2.Replace("月","-");}
+		s2=s2.Replace("日","");
+	}
+	else
+	{
+		s2=s2.Replace("年","-");
+		if(s2.Substring(9,1)=="日")
+			{s2=s2.Replace("月","-0");}
+		else
+			{s2=s2.Replace("月","-");}
+		s2=s2.Replace("日","");
+	}
+	var connectionString : String = "Data Source=2.2.2.5; uid=sa;pwd=Oupusoft.com;Initial Catalog=EC_dataserver";
+	var commandString : String;
+	//commandString = "SELECT station_ch,station_name as 站点名称 FROM [dbo].[realtime]"; 
+	var conn : System.Data.SqlClient.SqlConnection;
+	var command : System.Data.SqlClient.SqlCommand;
+	var dataAdaptor : System.Data.SqlClient.SqlDataAdapter;
+	var dt:System.Data.DataSet=new System.Data.DataSet();
+	var dt2:System.Data.DataSet=new System.Data.DataSet();
+	conn = new System.Data.SqlClient.SqlConnection(connectionString);
+	var wfCt3 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox1 : System.Windows.Forms.ListBox;
+	wfCt3 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox1"));
+	listbox1 = System.Windows.Forms.ListBox(wfCt3.Control);
+	listbox1.Items.Clear();
+
+		
+	commandString = "select rtrim(station_ch),sort from realtime where sort>500 and sort!=513"
+	command = new System.Data.SqlClient.SqlCommand(commandString,conn);
+	dataAdapter = new System.Data.SqlClient.SqlDataAdapter(command);
+	dataAdapter.Fill(dt2);
+	var s3=s;
+	
+	var wfCt4 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox3 : System.Windows.Forms.ListBox;
+	wfCt4 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox3"));
+	listbox3 = System.Windows.Forms.ListBox(wfCt4.Control);
+	
+	//listbox3.Items.Count();
+	for(var p=0;p<dt2.Tables[0].Rows.Count;p++)
+	{
+		s=s3	;	
+		var sort=dt2.Tables[0].Rows[p][1].ToString();
+		var station_name=dt2.Tables[0].Rows[p][0].ToString();
+		if(!listbox3.Items.Contains(station_name))
+		{
+			continue;
+		}
+		var txtstr="正在生成"+station_name+"的报表";
+		listbox1.Items.Add(txtstr);
+		var strFolder = "E:\\汽网报表\\"+station_name;
+		var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+		// 检查文件夹是否存在
+		if (!objFSO.FolderExists(strFolder))
+		{
+			// 创建文件夹
+			var strFolderName = objFSO.CreateFolder(strFolder);
+		}
+		strFolder = "E:\\汽网报表\\"+station_name+"\\日报表";
+		// 检查文件夹是否存在
+		if (!objFSO.FolderExists(strFolder))
+		{
+			// 创建文件夹
+			strFolderName = objFSO.CreateFolder(strFolder);
+		}
+		
+		var result = String.Empty;
+		//initialize TextReader for simple reading of text files
+		var i:int;
+		
+		
+		conn = new System.Data.SqlClient.SqlConnection(connectionString);
+		var path:String=strFolder+"\\"+s+"~"+s2+".xls";
+		//if (dt == null) return;
+		var sw =new System.IO.StreamWriter(path, false,System.Text.Encoding.GetEncoding("GB2312"));
+		var sb:System.Text.StringBuilder = new System.Text.StringBuilder();
+		try{
+			sb.Append("站点名称\t");
+			sb.Append(station_name);
+			sb.Append("\t日报表\t");
+			sb.Append("开始时间\t");
+			sb.Append(s);
+			sb.Append("\t结束时间\t");
+			sb.Append(s2);
+			while(s!=s2)
+			{
+				var tr:System.IO.TextReader = new System.IO.StreamReader("E:\\ribaoqi.txt"); 
+				sb.Append(Environment.NewLine);
+				sb.Append(s);
+				sb.Append(Environment.NewLine);
+				result="";
+				for (i = 0; i <= 22; i++)
+				{
+					if(i==8||i==19)
+					{
+						result += sort;
+					}
+					if(i==10||i==21)
+					{
+						result += s;
+					}
+					//by ReadLine() method read a line from opened file
+					result += tr.ReadLine();
+				}
+				tr.Close();
+				commandString = result;
+				//MessageBox.Show(result);
+				command = new System.Data.SqlClient.SqlCommand(commandString,conn);
+				dataAdapter = new System.Data.SqlClient.SqlDataAdapter(command);
+				//MessageBox.Show(result);
+				dt.Clear();
+				dataAdapter.Fill(dt);
+				for (var k = 0; k < dt.Tables[0].Columns.Count; k++)
+				{
+					sb.Append(dt.Tables[0].Columns[k].ColumnName + "\t");
+				}
+				sb.Append(Environment.NewLine);
+				for (var i = 0; i < dt.Tables[0].Rows.Count; i++)
+				{
+					System.Windows.Forms.Application.DoEvents();
+					for (var j = 0; j < dt.Tables[0].Columns.Count; j++)
+					{
+						 sb.Append(dt.Tables[0].Rows[i][j] + "\t");
+					}
+					sb.Append(Environment.NewLine);
+				}
+				s=nextday(s);
+			}
+			sb.Append(Environment.NewLine);
+			tr= new System.IO.StreamReader("E:\\duoribaoqi.txt"); 
+			result="";
+			for (i = 1; i <= 13; i++)
+			{
+				if(i==9)
+				{
+					result += sort;
+				}
+				if(i==11)
+				{
+					result += s3;
+				}
+				if(i==13)
+				{
+					result += s2;
+				}
+				//by ReadLine() method read a line from opened file
+				result += tr.ReadLine();
+			}
+			tr.Close();
+			commandString = result;
+			command = new System.Data.SqlClient.SqlCommand(commandString,conn);
+			dataAdapter = new System.Data.SqlClient.SqlDataAdapter(command);
+			//MessageBox.Show(result);
+			var dt1:System.Data.DataSet=new System.Data.DataSet();
+			dataAdapter.Fill(dt1);
+			for (var k = 0; k < dt1.Tables[0].Columns.Count; k++)
+			{
+				sb.Append(dt1.Tables[0].Columns[k].ColumnName + "\t");
+			}
+			sb.Append(Environment.NewLine);
+			for (var i = 0; i < dt1.Tables[0].Rows.Count; i++)
+			{
+				System.Windows.Forms.Application.DoEvents();
+				for (var j = 0; j < dt1.Tables[0].Columns.Count; j++)
+				{
+					 sb.Append(dt1.Tables[0].Rows[i][j] + "\t");
+				}
+				sb.Append(Environment.NewLine);
+			}
+			sw.Write(sb.ToString());
+		}
+		catch(exception)
+		{
+			MessageBox.Show(exception);
+		}
+		finally
+		{
+			conn.Close();
+			sw.Flush();	
+			sw.Close();
+		}
+	}
+	listbox1.Items.Add("生成完毕，请在E盘汽网报表里查询生成内容！！");
+}
+function nextday(s:String)
+{
+	var day:String=s.replace(/(.+)(.{2})/,"$2");
+	var month:String=s.Substring(5,2);
+	var year:String=s.Substring(0,4);
+	if(month=="01"&&day=="31")
+	{
+		month="02";
+		day="01";
+	}
+	else if(month=="02"&&day=="28")
+	{
+		month="03";
+		day="01";
+	}
+	else if(month=="03"&&day=="31")
+	{
+		month="04";
+		day="01";
+	}
+	else if(month=="04"&&day=="30")
+	{
+		month="05";
+		day="01";
+	}
+	else if(month=="05"&&day=="31")
+	{
+		month="06";
+		day="01";
+	}
+	else if(month=="06"&&day=="30")
+	{
+		month="07";
+		day="01";
+	}
+	else if(month=="07"&&day=="31")
+	{
+		month="08";
+		day="01";
+	}
+	else if(month=="08"&&day=="31")
+	{
+		month="09";
+		day="01";
+	}
+	else if(month=="09"&&day=="30")
+	{
+		month="10";
+		day="01";
+	}	
+	else if(month=="10"&&day=="31")
+	{
+		month="11";
+		day="01";
+	}
+	else if(month=="11"&&day=="30")
+	{
+		month="12";
+		day="01";
+	}
+	else if(month=="12"&&day=="31")
+	{
+		day="01";
+		month="01";
+		year=parseInt(year)+parseInt(1);
+	}
+	else
+	{
+		day=parseInt(day)+parseInt(1);
+	}
+	var t1:String
+	if(day.Length==1)
+	{t1=year+"-"+month+"-0"+day;}
+	else
+	{t1=year+"-"+month+"-"+day;}
+	return t1
+}]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick2Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick2_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var wfCt2 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox2 : System.Windows.Forms.ListBox;
+	wfCt2 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox2"));
+	listbox2 = System.Windows.Forms.ListBox(wfCt2.Control);
+	listbox2.Items.Clear();
+
+	var wfCt4 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox4 : System.Windows.Forms.ListBox;
+	wfCt4 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox4"));
+	listbox4 = System.Windows.Forms.ListBox(wfCt4.Control);
+	
+	var wfCt3 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox3 : System.Windows.Forms.ListBox;
+	wfCt3 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox3"));
+	listbox3 = System.Windows.Forms.ListBox(wfCt3.Control);
+	listbox3.Items.Clear();
+	listbox3.Items.AddRange(listbox4.Items)
+	
+
+}
+
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick3Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick3_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var wfCt2 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox2 : System.Windows.Forms.ListBox;
+	wfCt2 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox3"));
+	listbox2 = System.Windows.Forms.ListBox(wfCt2.Control);
+	listbox2.Items.Clear();
+
+	var wfCt4 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox4 : System.Windows.Forms.ListBox;
+	wfCt4 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox4"));
+	listbox4 = System.Windows.Forms.ListBox(wfCt4.Control);
+	
+	var wfCt3 : Ico.Gwx.GwxWindowsFormsControl;
+	var listbox3 : System.Windows.Forms.ListBox;
+	wfCt3 = Ico.Gwx.GwxWindowsFormsControl(ThisConfiguration.GetObjectByName("listbox2"));
+	listbox3 = System.Windows.Forms.ListBox(wfCt3.Control);
+	listbox3.Items.Clear();
+	listbox3.Items.AddRange(listbox4.Items)
+
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Button FontFamily="Microsoft YaHei UI" FontSize="12" Name="Button1" Width="232.80981" Height="70.120677" Canvas.Left="1123.501182" Canvas.Top="771.503368" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick1" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick1_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="确定生成" LayoutTransform="4.33862709973753,0,0,4.33862709973753,0,0" />
+  </Button>
+  <gwx:WindowsFormsControl FontFamily="Microsoft YaHei UI" FontSize="12" Name="DateTimePicker1" Width="209.419048" Height="28.404695" Canvas.Left="956.43981" Canvas.Top="691.73391">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <DateTimePicker xsi:type="System.Windows.Forms.DateTimePicker">
+              <CalendarFont>Microsoft Sans Serif, 8.25pt</CalendarFont>
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Microsoft Sans Serif, 12pt</Font>
+              <Location>0, 0</Location>
+              <Name>DateTimePicker1</Name>
+              <Size>209, 26</Size>
+              <TabIndex>1</TabIndex>
+            </DateTimePicker>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+  </gwx:WindowsFormsControl>
+  <gwx:WindowsFormsControl FontFamily="Microsoft YaHei UI" FontSize="12" Name="DateTimePicker2" Width="209.419048" Height="28.404695" Canvas.Left="1319.755361" Canvas.Top="691.73391">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <DateTimePicker xsi:type="System.Windows.Forms.DateTimePicker">
+              <CalendarFont>Microsoft Sans Serif, 8.25pt</CalendarFont>
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Microsoft Sans Serif, 12pt</Font>
+              <Location>0, 0</Location>
+              <Name>DateTimePicker2</Name>
+              <Size>209, 26</Size>
+              <TabIndex>1</TabIndex>
+            </DateTimePicker>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+  </gwx:WindowsFormsControl>
+  <gwx:WindowsFormsControl FontFamily="Microsoft YaHei UI" FontSize="12" Name="listbox1" Width="634.161034" Height="952.783807" Canvas.Left="31.813121" Canvas.Top="35.654076">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <ListBox xsi:type="System.Windows.Forms.ListBox">
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Microsoft Sans Serif, 17pt</Font>
+              <FormattingEnabled>true</FormattingEnabled>
+              <ItemHeight>29</ItemHeight>
+              <Location>0, 0</Location>
+              <Margin>0, 0, 0, 0</Margin>
+              <Name>listbox1</Name>
+              <Size>634, 932</Size>
+              <TabIndex>2</TabIndex>
+            </ListBox>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+  </gwx:WindowsFormsControl>
+  <gwx:WindowsFormsControl FontFamily="Microsoft YaHei UI" FontSize="12" Name="listbox2" Width="409.402471" Height="524.636364" Canvas.Left="732.279059" Canvas.Top="69.744042">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <ListBox xsi:type="System.Windows.Forms.ListBox">
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Microsoft Sans Serif, 20pt</Font>
+              <FormattingEnabled>true</FormattingEnabled>
+              <ItemHeight>31</ItemHeight>
+              <Items>
+                <string>万寿路地铁站</string>
+                <string>老城东客运站</string>
+                <string>红光养殖场</string>
+                <string>军事代表局</string>
+                <string>中天物资</string>
+                <string>富民豆制品厂</string>
+                <string>双建酒店</string>
+                <string>综合建材</string>
+                <string>金百合洗涤</string>
+                <string>电力技校</string>
+                <string>嘉禾商贸</string>
+                <string>丹尼尔商城</string>
+                <string>金花新都汇</string>
+                <string>祥林2</string>
+                <string>胡家庙第五批干休所</string>
+                <string>德文物业</string>
+                <string>天佑</string>
+                <string>华南洗涤</string>
+                <string>西安工程大学</string>
+                <string>西安理工大学(夏季管)</string>
+                <string>工业车站</string>
+                <string>合成洗涤</string>
+              </Items>
+              <Location>0, 0</Location>
+              <Name>listbox2</Name>
+              <Size>409, 500</Size>
+              <TabIndex>3</TabIndex>
+            </ListBox>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+    <gwx:WindowsFormsControl.EventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DoubleClick" MethodName="listbox2_DoubleClick" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:WindowsFormsControl.EventBindings>
+  </gwx:WindowsFormsControl>
+  <gwx:WindowsFormsControl FontFamily="Microsoft YaHei UI" FontSize="12" Name="listbox3" Width="409.402471" Height="524.636364" Canvas.Left="1393.754941" Canvas.Top="67.268889">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <ListBox xsi:type="System.Windows.Forms.ListBox">
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Microsoft Sans Serif, 20pt</Font>
+              <FormattingEnabled>true</FormattingEnabled>
+              <ItemHeight>31</ItemHeight>
+              <Location>0, 0</Location>
+              <Name>listbox3</Name>
+              <Size>409, 500</Size>
+              <TabIndex>3</TabIndex>
+            </ListBox>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+    <gwx:WindowsFormsControl.EventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DoubleClick" MethodName="listbox3_DoubleClick" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:WindowsFormsControl.EventBindings>
+  </gwx:WindowsFormsControl>
+  <Canvas Name="addGroup">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick2" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick2_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <Polygon Points="1177.21735711409,187.826086088965 1302.43470344231,187.826086088965 1344.17389547818,220.334458586918 1302.434818332,255.551838357864 1177.21735711409,258.260877322195" Stroke="#FF000000">
+      <Polygon.Fill>
+        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+          <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FFF5F5F5" Offset="0" />
+            <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+            <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+            <GradientStop Color="#FFCDCDCD" Offset="1" />
+          </LinearGradientBrush.GradientStops>
+          <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+          </LinearGradientBrush.RelativeTransform>
+        </LinearGradientBrush>
+      </Polygon.Fill>
+    </Polygon>
+    <Label FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="110.52884" Height="37.521747" Canvas.Left="1182.691407" Canvas.Top="203.478257" gwx:GwxProperties.Stretch="Uniform">
+      <TextBlock Text="添加全部" LayoutTransform="1.80588891076115,0,0,1.80588891076115,0,0" />
+    </Label>
+  </Canvas>
+  <Canvas Name="addGroup1">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick3" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick3_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <Polygon Points="1177.21735711409,331.30434695853 1302.43470344231,331.30434695853 1344.17389547818,363.812719456483 1302.434818332,399.030099227429 1177.21735711409,401.73913819176" Stroke="#FF000000" RenderTransform="-1,0,0,1,2521.39135742188,0">
+      <Polygon.Fill>
+        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+          <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FFF5F5F5" Offset="0" />
+            <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+            <GradientStop Color="#FFE1E1E1" Offset="0.51" />
+            <GradientStop Color="#FFCDCDCD" Offset="1" />
+          </LinearGradientBrush.GradientStops>
+          <LinearGradientBrush.RelativeTransform>
+            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5" />
+          </LinearGradientBrush.RelativeTransform>
+        </LinearGradientBrush>
+      </Polygon.Fill>
+    </Polygon>
+    <Label FontFamily="Microsoft YaHei UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="110.52884" Height="37.521747" Canvas.Left="1216.691407" Canvas.Top="346.956518" gwx:GwxProperties.Stretch="Uniform">
+      <TextBlock Text="移除全部" LayoutTransform="1.80588891076115,0,0,1.80588891076115,0,0" />
+    </Label>
+  </Canvas>
+  <gwx:WindowsFormsControl FontFamily="Microsoft YaHei UI" FontSize="12" Name="listbox4" Width="409.402471" Height="524.636364" Visibility="Hidden" Canvas.Left="113.980274" Canvas.Top="240.341611">
+    <gwx:WindowsFormsControl.ControlProperties>
+      <XmlDataProvider IsAsynchronous="False">
+        <x:XData>
+          <Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="">
+            <ListBox xsi:type="System.Windows.Forms.ListBox">
+              <DataBindings>
+                <DefaultDataSourceUpdateMode>OnValidation</DefaultDataSourceUpdateMode>
+              </DataBindings>
+              <Font>Microsoft Sans Serif, 20pt</Font>
+              <FormattingEnabled>true</FormattingEnabled>
+              <ItemHeight>31</ItemHeight>
+              <Items>
+                <string>万寿路地铁站</string>
+                <string>老城东客运站</string>
+                <string>红光养殖场</string>
+                <string>军事代表局</string>
+                <string>中天物资</string>
+                <string>富民豆制品厂</string>
+                <string>双建酒店</string>
+                <string>综合建材</string>
+                <string>金百合洗涤</string>
+                <string>电力技校</string>
+                <string>嘉禾商贸</string>
+                <string>丹尼尔商城</string>
+                <string>金花新都汇</string>
+                <string>祥林2</string>
+                <string>胡家庙第五批干休所</string>
+                <string>德文物业</string>
+                <string>天佑</string>
+                <string>华南洗涤</string>
+                <string>西安工程大学</string>
+                <string>西安理工大学(夏季管)</string>
+                <string>工业车站</string>
+                <string>合成洗涤</string>
+              </Items>
+              <Location>0, 0</Location>
+              <Name>ListBox4</Name>
+              <Size>409, 500</Size>
+              <TabIndex>3</TabIndex>
+              <Visible>false</Visible>
+            </ListBox>
+          </Data>
+        </x:XData>
+      </XmlDataProvider>
+    </gwx:WindowsFormsControl.ControlProperties>
+    <gwx:WindowsFormsControl.EventBindings>
+      <script:ScriptEventBindings>
+        <script:ScriptEventBindings.EventBindings>
+          <x:Array Type="script:ScriptEventBinding">
+            <script:ScriptEventBinding EventName="DoubleClick" MethodName="listbox2_DoubleClick" ScriptType="JScriptNet" />
+          </x:Array>
+        </script:ScriptEventBindings.EventBindings>
+      </script:ScriptEventBindings>
+    </gwx:WindowsFormsControl.EventBindings>
+  </gwx:WindowsFormsControl>
+</Canvas>

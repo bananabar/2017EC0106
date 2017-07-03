@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFFFFFFF" Width="1920" Height="1040" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAAQAAAACKCAYAAABFLpRsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASzSURBVHhe7d3Pi81dAMfxM0J+5keyEBE2omyUf4D9bLC1srCQlSLWFkz8D2wsLG1EKcluFrIy0yAR5TdDxo/v45zuo2chPT8809zv5/Wq28x17yiL8/a953vOmZHuuwJEmjf4CgQSAAgmABBMACCYAEAwAYBgAgDBBACCCQAEEwAIJgAQTAAgmABAMAGAYAIAwQQAggkABBMACCYAEEwAIJgAQDABgGACAMEEAIIJAAQTAAgmABBMACCYAECwofjtwFNTU2XevLnRqm/fvpXNmzcPnsFwG4oAPHjwoA28uaCGaNOmTYNnMNx6F4BDhw51y5YtKydOnCj168ePH8ujR4/Kq1ev2pXEvn37ypcvX0r9Zy9ZsqS8ePGirFmzpixcuHBk8Ff8kgDQJ72bA/jw4UOZmZkpb968KdevXy9jY2NtwNdHjcGTJ0/KxYsXy6VLl9rjzp075cKFC4Ofhiy9C8DixYvL8uXLy7t378r4+Hj7n3/p0qVt8C9atKh8/fq1TE9Pt0isWLGibN++vcyfP3/w05DFJOA/ZBKQPhmKAAD/D+sAIJgAQDABgGACAMGGahLQ3QD4vYYqAJYEw+/Vq48AN27c6A4ePNidP3/+p1H79OlTNzMz016bnp52+5N4vQrAw4cPy5EjR9oqv/Hx8e7ly5dtkL9//76rg//YsWM1EuXatWvdyZMn6/vae65evdr9GYSnT592t27d+vEc+qx3k4CnT58ut2/fLjt27Gj7AKrLly+Xu3fvtu//6vnz523T0JYtW8rhw4frx4vuwIEDbelwjQX0Xe8CcPz48XL06NHy/WPA4E9K+fz5cxkZGWm7A+vOv5UrV7bv68ag3bt31wCM1H0B1YYNG8rOnTvL69ev23Pos15eAZw9e7bs2bOnbNy4sZw6daq7cuVKe23VqlXl5s2bZfXq1W1Ccd26dW3H4Llz57oFCxa090ASdwH+JXcB6IOhugKog78OvLnwmCshgv/CbkAI1rs5AODvEwAIJgAQrBdzALO5SahO/tkERF/0IgC/uj04NjZWl/uWXbt2lb1797bjwCcnJ9tCn/v377djwuuBofUw0bpY6O3bt2Xt2rX1oNCfHhNeQ+P2H33R+wCcOXOmu3fvXtm/f39b+VePC68DuJ4QPDExUbZt21aePXvWXqtLgLdu3Vr3DpTR0VEBoPd6PwdQB+z69evbuv864B8/fvzjmPD6i0Fq/+oVQj0avF4F1GXAjgknRe+vAH43VwD0SS+uAOrgrwNzNh6zFRqYDVYCQjDrACCYAEAwAYBgAgDBBACCCQAEEwAIJgAQTAAgmABAMAGAYAIAwQQAggkABBMACCYAEEwAIJgAQDABgGACAMEEAIIJAAQTAAgmABBMACCYAEAwAYBgAgDBBACCCQAEEwAIJgAQTAAgmABAMAGAYAIAwQQAggkABBMACCYAEEwAIJgAQDABgGACAMEEAIIJAAQTAAgmABBMACCYAEAwAYBgAgDBBACCCQAEEwAIJgAQTAAgmABAMAGAYAIAwQQAggkABBMACCYAEEwAIJgAQDABgGACAMEEAIIJAAQTAAgmABBMACCYAEAwAYBgAgDBBABilfIHuKCmEqUD2kYAAAAASUVORK5CYII=" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.90.169.00" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick1Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick1_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	var connectionString : String = "Data Source=2.2.2.5; uid=sa;pwd=Oupusoft.com;Initial Catalog=EC_dataserver"; //OK
+	var conn : System.Data.SqlClient.SqlConnection;
+	var command : System.Data.SqlClient.SqlCommand;
+	var reader:System.Data.SqlClient.SqlDataReader;
+	var commandString : String;
+	commandString = "SELECT station,sort,bannum,NO,erciwang,tongdao FROM [dbo].[StationMessage] where sort<500;";
+	conn = new System.Data.SqlClient.SqlConnection(connectionString);
+	conn.Open();
+	command = new System.Data.SqlClient.SqlCommand(commandString,conn);
+	reader=command.ExecuteReader();
+	reader.Read();
+	var ExcelSheet;
+	var xls = new ActiveXObject("Excel.Application");
+	//ExcelSheet = new ActiveXObject("Excel.Sheet");
+	var xlBook = xls.Workbooks.Add;
+	var xlsheet = xlBook.Worksheets(1);
+
+	　　//让Excel可见
+	xlsheet.visible = true;
+	　　//往第一行第一列所在的单元格插入一段文字
+	xlsheet.Cells(1,1).Value = "This is Column A, row 1";
+	　　//保存并退出
+	xlsheet.saveAs("E:\\EC1207\\2016.XLS");
+	xlsheet.Application.Quit();
+	
+}
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick2Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick2_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+	        var i, j, n;
+	        try {
+		          var xls = new ActiveXObject("Excel.Application");
+	        }
+	        catch(e) {
+		          alert( "要打印该表，您必须安装Excel电子表格软件，同时浏览器须使用“ActiveX 控件”，您的浏览器须允许执行控件。请点击【帮助】了解浏览器设置方法！");
+		            return "";
+	        }
+	        xls.visible =true; // 设置excel为可见
+	        var xlBook = xls.Workbooks.Add;
+	        var xlsheet = xlBook.Worksheets(1);
+	       // <!--合并-->
+	        xlsheet.Range(xlsheet.Cells(1,1),xlsheet.Cells(1,7)).mergecells=true;
+	        xlsheet.Range(xlsheet.Cells(1,1),xlsheet.Cells(1,7)).value="发卡记录";
+	        xlsheet.Range(xlsheet.Cells(1,1),xlsheet.Cells(1,3)).Interior.ColorIndex=5; // 设置底色为蓝色
+	        // xlsheet.Range(xlsheet.Cells(1,1),xlsheet.Cells(1,6)).Font.ColorIndex=4; // 设置字体色
+	        // xlsheet.Rows(1). Interior .ColorIndex = 5 ;//设置底色为蓝色  设置背景色 Rows(1).Font.ColorIndex=4
+	       // <!--设置行高-->
+	        xlsheet.Rows(1).RowHeight = 25;
+	       // <!--设置字体 ws.Range(ws.Cells(i0+1,j0), ws.Cells(i0+1,j1)).Font.Size = 13 -->
+	        xlsheet.Rows(1).Font.Size=14;
+	       // <!--设置字体 设置选定区的字体  xlsheet.Range(xlsheet.Cells(i0,j0), ws.Cells(i0,j0)).Font.Name = "黑体" -->
+	        xlsheet.Rows(1).Font.Name="黑体";
+	       // <!--设置列宽 xlsheet.Columns(2)=14;-->
+	        xlsheet.Columns("A:D").ColumnWidth =18;
+	       // <!--设置显示字符而不是数字-->
+	        xlsheet.Columns(2).NumberFormatLocal="@";
+	        xlsheet.Columns(7).NumberFormatLocal="@";
+	        //设置单元格内容自动换行 range.WrapText  =  true  ;
+	        //设置单元格内容水平对齐方式 range.HorizontalAlignment  =  Excel.XlHAlign.xlHAlignCenter;//设置单元格内容竖直堆砌方式
+	        //range.VerticalAlignment=Excel.XlVAlign.xlVAlignCenter
+	        //range.WrapText  =  true;  xlsheet.Rows(3).WrapText=true  自动换行
+	        //设置标题栏
+	        xlsheet.Cells(2, 1).Value = "卡号";
+	        xlsheet.Cells(2, 2).Value = "密码";
+	        xlsheet.Cells(2, 3).Value = "计费方式";
+	        xlsheet.Cells(2, 4).Value = "有效天数";
+	        xlsheet.Cells(2, 5).Value = "金额";
+	        xlsheet.Cells(2, 6).Value = "所属服务项目";
+	        xlsheet.Cells(2, 7).Value = "发卡时间";
+	        var oTable = document.all['fors:data'];
+	        var rowNum = oTable.rows.length;
+	        for(i = 2; i <= rowNum; i++) {
+		          for (j = 1; j <= 7; j++) {
+			            //html table类容写到excel
+			            xlsheet.Cells(i + 1, j).Value = oTable.rows(i - 1).cells(j - 1).innerHTML;
+		          }
+	        }
+	      //  <!--  xlsheet.Range(xls.Cells(i+4,2),xls.Cells(rowNum,4)).Merge; -->
+	        // xlsheet.Range(xlsheet.Cells(i, 4), xlsheet.Cells(i-1, 6)).BorderAround , 4
+	        // for(mn=1,mn<=6;mn++) .    xlsheet.Range(xlsheet.Cells(1, mn), xlsheet.Cells(i1, j)).Columns.AutoFit;
+	        xlsheet.Columns.AutoFit;
+	        xlsheet.Range( xlsheet.Cells(1,1),xlsheet.Cells(rowNum+1,7)).HorizontalAlignment =-4108;//居中
+	        xlsheet.Range( xlsheet.Cells(1,1),xlsheet.Cells(1,7)).VerticalAlignment =-4108;
+	        xlsheet.Range( xlsheet.Cells(2,1),xlsheet.Cells(rowNum+1,7)).Font.Size=10;
+	        xlsheet.Range( xlsheet.Cells(2,1),xlsheet.Cells(rowNum+1,7)).Borders(3).Weight = 2; //设置左边距
+	        xlsheet.Range( xlsheet.Cells(2,1),xlsheet.Cells(rowNum+1,7)).Borders(4).Weight = 2;//设置右边距
+	        xlsheet.Range( xlsheet.Cells(2,1),xlsheet.Cells(rowNum+1,7)).Borders(1).Weight = 2;//设置顶边距
+	        xlsheet.Range( xlsheet.Cells(2,1),xlsheet.Cells(rowNum+1,7)).Borders(2).Weight = 2;//设置底边距
+	        xls.UserControl = true;  //很重要,不能省略,不然会出问题 意思是excel交由用户控制
+	        xls=null;
+	        xlBook=null;
+	        xlsheet=null;
+      }]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="Pick3Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function Pick3_CommandExecuted(sender : System.Object, cmdArgs : Ico.Gwx.CommandExecutionEventArgs)
+{
+		Microsoft.Office.Interop.Excel.Applicationapp=new Microsoft.Office.Interop.Excel.ApplicationClass();
+	System.Data.DataTableexcelTable=new System.Data.DataTable();
+	
+	SqlConnectionsqlconn=newSqlConnection("Data Source=2.2.2.5; uid=sa;pwd=Oupusoft.com;Initial Catalog=EC_dataserver"); 
+	sqlconn.Open();
+	SqlDataAdaptersda=newSqlDataAdapter("SELECT station,sort,bannum,NO,erciwang,tongdao FROM [dbo].[StationMessage] where sort<500;",sqlconn);
+	DataSetds=newDataSet();
+	sda.Fill(ds,"table1");
+	excelTable=ds.Tables["table1"];
+	
+	stringfilePath="c:\\temp\\test.xls";
+	try
+	{
+		app.Visible=false;
+		Workbookwb=app.Workbooks.Add(true);
+		Worksheetws=app.Worksheets[1].asWorksheet;
+		if(excelTable.Rows.Count>0)
+		{
+		int row=0;
+		row=excelTable.Rows.Count;
+		int col=excelTable.Columns.Count;
+		for(inti=0;i<row;i++)
+		{
+			for(intj=0;j<col;j++)
+			{
+			string str=excelTable.Rows[i][j].ToString();
+			ws.Cells[i+2,j+1]=str;
+			}
+		}
+	}
+	
+		int size=excelTable.Columns.Count;
+	for(int i=0;i<size;i++)
+	{
+		ws.Cells[1,1+i]=excelTable.Columns[i].ColumnName;
+	}
+	//不显示保存和覆盖的确认提示框:
+		app.DisplayAlerts=false;
+		app.AlertBeforeOverwriting=false;
+	//保存工作簿
+		wb.SaveCopyAs("C:\\temp\\test1.xls");//如果用wb.save()就会报错，提示Sheet1.xls无法访问;保存时如果文件不存在也会报错;
+	//保存excel文件
+	//app.SaveWorkspace(filePath);
+		app.Quit();
+		app=null;
+	}
+	catch(Exceptionex)
+	{
+		Response.Write("exporterror"+ex.Message);
+	}
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" AssemblyCodebase="file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_64/System.Data/v4.0_4.0.0.0__b77a5c561934e089/System.Data.dll" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Button FontFamily="Microsoft YaHei UI" FontSize="12" Name="Button1" Width="265" Height="46" Canvas.Left="310" Canvas.Top="225" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick1" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick1_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" LayoutTransform="2.75590551181102,0,0,2.75590551181102,0,0" />
+  </Button>
+  <Button FontFamily="Microsoft YaHei UI" FontSize="12" Name="Button2" Width="274" Height="64" Canvas.Left="322" Canvas.Top="311" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick2" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick2_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" LayoutTransform="3.93700787401575,0,0,3.93700787401575,0,0" />
+  </Button>
+  <Button FontFamily="Microsoft YaHei UI" FontSize="12" Name="Button3" Width="203" Height="44" Canvas.Left="371" Canvas.Top="403" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Name="Pick3" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:ScriptCommand />
+            </gwx:GwxPick.CommandParameters>
+            <gwx:GwxPick.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="CommandExecuted" MethodName="Pick3_CommandExecuted" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxPick.EventBindings>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" LayoutTransform="2.6246719160105,0,0,2.6246719160105,0,0" />
+  </Button>
+</Canvas>

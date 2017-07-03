@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFFFFFFF" Width="1920" Height="1080" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:gwxcmd="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCoreCommands">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAAQAAAACQCAYAAADnY7WRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAWjSURBVHhe7dy7Sl1bAIXhqcYLxoBWXtBClCQEVBALRStfwcI+L2NlZecb+ALiC9gZkBQSLb2BCIIGC4mXZG04hyNGj9ma3Yxvd4G1Vub4x9h/lhBsuvv1KT4IIBBJoDkytdAIIFAjQACGgEAwAQIILl90BAjABhAIJkAAweWLjgAB2AACwQQIILh80REgABtAIJgAAQSXLzoCBGADCAQTIIDg8kVHgABsAIFgAgQQXL7oCBCADSAQTIAAgssXHYGmRv4+gMPDw9LS0vJq1K+vr8vQ0FBdz3vtszx1iJecs65wbkLgmQQaLoC3b98+ONrR0dFdZ2dn6enpaXrmuWuXXV5elsHBwT+55d9rj4+Py+/OUtfD/uem6pwDAwN/49GeicCLCDRUAHt7e6W9vf3BgVdWVu66urrK+/fvy8bGRrm6uipzc3Pl7OysVP963tzclM+fP5fW1tZ7gqiuq+6p53NwcPCkAJaWlu5OT0/LxMREWVxcLN+/fy9ra2ult7e3fPjwofbmUZ2rra2tnJ+fV39+VF6VAOp9U6knm3sQeC6Bhgrg69ev5c2bNw/Otrq6evfry137su/v75eRkZFSvRFUstjc3CwLCwvl3bt35dOnT/e+ZNX14+Pjz81677pv375VQnn03uXl5bvd3d0yOTlZxsbGyvr6eunr6yv9/f2lu7u77Ozs1L781Y8Ss7Oz1dtLmZ6e/q0Efvz4UT5+/FjXOd2EwN8k0FABbG1tlaamP3rLfzJ79esMp6am6uLzmIz+eVj1VnJxcVE6OjpqZ65+ZBgdHS3Dw8Olubm5bG9v194gKgnMz8+Xk5OTMjMz89twLxFVXeHchMAzCTRUAM88U0Mu+/Lly6vK6KlD397e1i2qhsDwl8QSiBVAbOOCI/AfAv4fgDkgEEyAAILLFx0BArABBIIJEEBw+aIjQAA2gEAwAQIILl90BAjABhAIJkAAweWLjgAB2AACwQQIILh80REgABtAIJgAAQSXLzoCBGADCAQTIIDg8kVHgABsAIFgAgQQXL7oCBCADSAQTIAAgssXHQECsAEEggkQQHD5oiNAADaAQDABAgguX3QECMAGEAgmQADB5YuOAAHYAALBBAgguHzRESAAG0AgmAABBJcvOgIEYAMIBBMggODyRUeAAGwAgWACBBBcvugIEIANIBBMgACCyxcdAQKwAQSCCRBAcPmiI0AANoBAMAECCC5fdAQIwAYQCCZAAMHli44AAdgAAsEECCC4fNERIAAbQCCYAAEEly86AgRgAwgEEyCA4PJFR4AAbACBYAIEEFy+6AgQgA0gEEyAAILLFx0BArABBIIJEEBw+aIjQAA2gEAwAQIILl90BAjABhAIJkAAweWLjgAB2AACwQQIILh80REgABtAIJgAAQSXLzoCBGADCAQTIIDg8kVHgABsAIFgAgQQXL7oCBCADSAQTIAAgssXHQECsAEEggkQQHD5oiNAADaAQDABAgguX3QECMAGEAgmQADB5YuOAAHYAALBBAgguHzRESAAG0AgmAABBJcvOgIEYAMIBBMggODyRUeAAGwAgWACBBBcvugIEIANIBBMgACCyxcdAQKwAQSCCRBAcPmiI0AANoBAMAECCC5fdAQIwAYQCCZAAMHli44AAdgAAsEECCC4fNERIAAbQCCYAAEEly86AgRgAwgEEyCA4PJFR4AAbACBYAIEEFy+6AgQgA0gEEyAAILLFx0BArABBIIJEEBw+aIjQAA2gEAwAQIILl90BAjABhAIJkAAweWLjgAB2AACwQQIILh80REgABtAIJgAAQSXLzoCBGADCAQTIIDg8kVHgABsAIFgAgQQXL7oCBCADSAQTIAAgssXHQECsAEEggkQQHD5oiNAADaAQDABAgguX3QECMAGEAgmQADB5YuOAAHYAALBBH4CobS5+UhB1PAAAAAASUVORK5CYII=" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.92.173.00" PreferredStretch="Fill" ScanRate="500" />
+  </gwx:GwxDocument.GwxDocument>
+  <Button FontFamily="微软雅黑" FontSize="12" Name="Button1" Width="155" Height="34" Canvas.Left="204" Canvas.Top="121" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:GlobalAliasesCommand GlobalAliases="#a=&quot;..&amp;/myproject123&amp;/liutaihongbei&amp;/liutai.gdfx&quot;;" />
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" LayoutTransform="1.76804883182488,0,0,1.76804883182488,0,0" />
+  </Button>
+  <Button FontFamily="微软雅黑" FontSize="12" Name="Button2" Width="210" Height="43" Canvas.Left="467" Canvas.Top="122" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxPick LeftMouseButton="True" ExecuteOnUp="True" Control="True">
+            <gwx:GwxPick.CommandParameters>
+              <gwxcmd:LoadDisplayCommand FileName="&lt;#a#&gt;" TargetType="WindowOwnedPopup">
+                <gwxcmd:LoadDisplayCommand.WindowProperties>
+                  <gwx:GwxWindowProperties LeftString="0%" TopString="0%" WidthString="100%" HeightString="100%" OverridePreviousDisplay="True" />
+                </gwxcmd:LoadDisplayCommand.WindowProperties>
+              </gwxcmd:LoadDisplayCommand>
+            </gwx:GwxPick.CommandParameters>
+          </gwx:GwxPick>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="Button" LayoutTransform="2.3363502420543,0,0,2.3363502420543,0,0" />
+  </Button>
+</Canvas>
